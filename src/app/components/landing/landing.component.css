@@ -1,16 +1,18 @@
-div{
+.root-container {
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
-}
-header{
-  background-color: chocolate;
-}
 
-main{
-  background-color: yellow;
-}
+  & .main-header {
+    background-color: chocolate;
+  }
 
-footer{
-  background-color: aquamarine;
+  & .main {
+    background-color: yellow;
+  }
+
+  & .main-footer {
+    background-color: aquamarine;
+  }
+
 }
