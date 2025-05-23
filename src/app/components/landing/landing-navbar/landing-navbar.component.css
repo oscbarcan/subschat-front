@@ -1,0 +1,86 @@
+.nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .nav-container {
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 5rem;
+
+    .nav-section {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        max-width: 200px;
+        max-height: 200px;
+        color: #ff640a;
+        margin-right: 1rem;
+      }
+
+      .search-bar {
+        min-height: 30px;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        width: 250px;
+        background-color: #fff;
+        transition: box-shadow 0.3s ease;
+
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(255, 100, 10, 0.8);
+        }
+      }
+
+      .login {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 30px;
+
+        .user-icon {
+          width: 24px;
+          height: 24px;
+          color: #ff640a;
+        }
+
+        .login-btn {
+          background-color: #ff640a;
+          border: none;
+          border-radius: 20px;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #e55a00;
+          }
+        }
+
+        .profile {
+          border: 1px solid black;
+          border-radius: 200px;
+          max-width: 50px;
+        }
+
+        .section {
+          min-height: 100%;
+
+          &.section:active {
+            background-color: #141519;
+          }
+        }
+
+        .save-chats {
+          width: 50px;
+        }
+      }
+    }
+  }
+}
