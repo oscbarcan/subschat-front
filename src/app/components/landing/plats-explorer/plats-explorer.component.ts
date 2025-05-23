@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { PlatsSubsService } from '../../../services/plats-subs.service';
 import { NgClass } from '@angular/common';
 
@@ -11,6 +11,11 @@ import { NgClass } from '@angular/common';
 export class PlatsExplorerComponent {
   private platsSubsService = inject(PlatsSubsService);
   protected platforms = this.platsSubsService.getStreamingPlatforms();
-
+  protected selectedPlatform = signal('Crunchyroll');
   
+
+  protected changePlatform(platform: string) {
+    console.log(platform);
+    this.selectedPlatform.set(platform);
+  }
 }

@@ -32,10 +32,10 @@ export class PlatsSubsService {
       name: "HBO"
     },
     {
-      name: "Coming soon"
+      name: "Netflix"
     },
     {
-      name: "Coming soon"
+      name: "Whatever"
     },
     {
       name: "Coming soon"
