@@ -30,6 +30,15 @@ export class PlatsSubsService {
     },
     {
       name: "HBO"
+    },
+    {
+      name: "Coming soon"
+    },
+    {
+      name: "Coming soon"
+    },
+    {
+      name: "Coming soon"
     }
   ];
 
