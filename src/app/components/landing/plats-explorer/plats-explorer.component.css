@@ -1,0 +1,32 @@
+.platforms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    .platforms-section {
+        width: 70%;
+        display: flex;
+        
+        .platform-container {
+            padding-inline: 2rem;
+            padding-block: 1rem;
+            background-color: #ccc;
+            width: 100px;
+            text-align: center;
+            font-weight: bold;
+
+            &.HBO:hover {
+                color: #22c;
+            }
+
+            &.crunchy:hover {
+                color: #ff640a;
+            }
+
+            &.active {
+                background-color: #aaa;
+            }
+        }
+    }
+}

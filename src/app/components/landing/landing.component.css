@@ -8,11 +8,10 @@
   }
 
   & .main {
-    background-color: yellow;
+    background-color: #eee;
   }
 
   & .main-footer {
     background-color: aquamarine;
   }
-
 }

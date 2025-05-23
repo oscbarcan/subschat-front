@@ -1,0 +1,13 @@
+<div class="platforms-container">
+    <section class="platforms-section">
+        @for (platform of platforms; track platform.name) {
+            <div class="platform-container" [ngClass]="{
+                'active': platform.name == 'Crunchyroll',
+                'HBO': platform.name == 'HBO',
+                'crunchy': platform.name == 'Crunchyroll'
+                }">
+                <span>{{platform.name}}</span>
+            </div>
+        }
+    </section>
+</div>
