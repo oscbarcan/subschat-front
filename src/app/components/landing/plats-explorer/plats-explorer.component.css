@@ -29,6 +29,7 @@
 
             &:hover {
                 background-color: #333;
+                cursor: pointer;
             }
 
             &.crunchy:hover {
@@ -54,9 +55,10 @@
             &.netflix.active {
                 color: var(--netflix-color);
             }
-
+            
             &.active {
                 background-color: #444;
+                cursor: default;
             }
         }
     }
