@@ -1,0 +1,45 @@
+<div class="nav-main">
+  <div class="nav-container">
+    <div class="nav-section">
+      <a href="#"><img class="logo" src="img/subschat-temp-logo-orange.png" alt="subschat"></a>
+      <input class="search-bar" type="text" placeholder="Buscar...">
+    </div>
+    <div class="nav-section">
+      @if (isLogin) {
+      <div class="login">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 25" class="user-icon">
+          <path fill="currentColor" fill-rule="evenodd"
+            d="M11.667 1.75a5.417 5.417 0 1 0 0 10.834 5.417 5.417 0 0 0 0-10.834Zm-2.77 2.647a3.917 3.917 0 1 1 5.54 5.54 3.917 3.917 0 0 1-5.54-5.54ZM6.07 16.902A7.917 7.917 0 0 1 19.583 22.5a.75.75 0 0 0 1.5 0 9.417 9.417 0 1 0-18.833 0 .75.75 0 0 0 1.5 0c0-2.1.834-4.113 2.319-5.598Z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <button class="login-btn">Login</button>
+      }@else{
+      <div class="loged">
+        <a href="#">
+          <svg class="save-chats" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg"
+            aria-labelledby="watchlist-svg" aria-hidden="true" role="img" fill="orange">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M19.0001 20.5858C19.0001 21.4767 17.9229 21.9229 17.293 21.2929L12.0001 16L6.7071 21.2929C6.07714 21.9229 5 21.4767 5 20.5858L5.00006 3H19.0001V20.5858ZM7.00001 18.1716L7.00006 5H17.0001V18.1716L12.0001 13.1716L7.00001 18.1716Z">
+            </path>
+          </svg>
+        </a>
+        <div class="profile-container">
+          <img (click)="openDropdown()" class="profile" src="img/default-profile.jpg" alt="Profile">
+          @if (showDropdown) {
+          <div class="dropdown">
+            <div class="dropdown-profile">
+              <img class="dropdown-profile-img" src="img/default-profile.jpg" alt="Profile">
+              <span>Nombre</span>
+            </div>
+            <hr>
+            <button>Log Out</button>
+          </div>
+          }
+        </div>
+      </div>
+      }
+
+    </div>
+  </div>
+</div>

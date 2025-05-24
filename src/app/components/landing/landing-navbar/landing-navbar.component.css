@@ -1,0 +1,144 @@
+:host {
+  --main-color: #ff640a;
+}
+
+.nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .nav-container {
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 5rem;
+
+    .nav-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .logo {
+        max-width: 200px;
+        max-height: 200px;
+        color: var(--main-color);
+        margin-right: 1rem;
+      }
+
+      .search-bar {
+        min-height: 30px;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        width: 250px;
+        background-color: #fff;
+        transition: box-shadow 0.3s ease;
+
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(255, 100, 10, 0.8);
+        }
+      }
+
+      .login {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 30px;
+      }
+      .user-icon {
+        width: 24px;
+        height: 24px;
+        color: var(--main-color);
+      }
+
+      .login-btn {
+        background-color: var(--main-color);
+        border: none;
+        padding: 0.5em 0.8em;
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #e55a00;
+        }
+      }
+
+      .loged {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        & a:hover {
+          background-color: #141519;
+        }
+
+        .save-chats {
+          width: 50px;
+        }
+
+        .profile-container {
+          position: relative;
+          display: inline-block;
+
+          .profile {
+            border: 1px solid #000;
+            border-radius: 200px;
+            max-width: 50px;
+            cursor: pointer;
+          }
+
+          .dropdown {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background-color: #141519;
+            top: 100%;
+            right: 0;
+            padding: 10px;
+            margin-top: 5px;
+            border: 0.5px solid black;
+            z-index: 1000;
+
+            .dropdown-profile {
+              display: flex;
+              flex-direction: row;
+              gap: 8px;
+              color: #fff;
+              align-items: center;
+
+              .dropdown-profile-img {
+                border: 1px solid #000;
+                border-radius: 200px;
+                max-width: 35px;
+              }
+            }
+            hr {
+              color: white;
+              width: 100%;
+              margin: 10px;
+            }
+          }
+
+          .dropdown button {
+            color: #000;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            min-width: 120px;
+          }
+
+          .dropdown button:hover {
+            background-color: #eee;
+          }
+        }
+      }
+    }
+  }
+}
