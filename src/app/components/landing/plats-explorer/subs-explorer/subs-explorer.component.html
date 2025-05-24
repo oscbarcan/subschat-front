@@ -1,1 +1,16 @@
-<p>subs-explorer works!</p>
+<div class="subscriptions-container">
+    <section class="subscriptions-section">
+        @for (subscription of platformSubscriptions(); track $index; let index=$index;) {
+            @for (monthsPerSubscription of subscription.membershipMonthsDuration; track $index) {
+                <div class="subscription-container">
+                    <span class="line sub-name sub-{{index}}">{{subscription.name }}</span>
+                    <span class="line sub-months">{{monthsPerSubscription}} months</span>
+                </div>
+            }
+        }
+        <div class="subscription-container view-all-subs-container">
+            <span class="line">View</span>
+            <span class="line">all</span>
+        </div>
+    </section>
+</div>

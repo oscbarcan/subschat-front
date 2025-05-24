@@ -4,61 +4,64 @@
     --netflix-color: #E50914;
 }
 
-.platforms-container {
+.centered-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    
+    .platforms-container {
+        max-width: 70%;
+        flex-direction: column;
 
-    .platforms-section {
-        width: 70%;
-        display: flex;
-        overflow: hidden;
-
-        .platform-container {
-            padding-inline: 2rem;
-            padding-block: 1rem;
-            width: 200px;
-            text-align: center;
-            font-weight: bold;
+        .platforms-section {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #ddd;
-            background-color: #222;
+            overflow: hidden;
 
-            &:hover {
-                background-color: #333;
-                cursor: pointer;
-            }
+            .platform-container {
+                padding-inline: 2rem;
+                padding-block: 1rem;
+                width: 200px;
+                text-align: center;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #ddd;
+                background-color: #222;
 
-            &.crunchy:hover {
-                color: var(--crunchy-color);
-            }
+                &:hover {
+                    background-color: #333;
+                    cursor: pointer;
+                }
 
-            &.crunchy.active {
-                color: var(--crunchy-color);
-            }
+                &.crunchy:hover {
+                    color: var(--crunchy-color);
+                }
 
-            &.HBO:hover {
-                color: var(--HBO-color);
-            }
+                &.crunchy.active {
+                    color: var(--crunchy-color);
+                }
 
-            &.HBO.active {
-                color: var(--HBO-color);
-            }
+                &.HBO:hover {
+                    color: var(--HBO-color);
+                }
 
-            &.netflix:hover {
-                color: var(--netflix-color);
-            }
+                &.HBO.active {
+                    color: var(--HBO-color);
+                }
 
-            &.netflix.active {
-                color: var(--netflix-color);
-            }
-            
-            &.active {
-                background-color: #444;
-                cursor: default;
+                &.netflix:hover {
+                    color: var(--netflix-color);
+                }
+
+                &.netflix.active {
+                    color: var(--netflix-color);
+                }
+
+                &.active {
+                    background-color: #444;
+                    cursor: default;
+                }
             }
         }
     }
