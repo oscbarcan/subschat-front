@@ -28,7 +28,12 @@
           <img (click)="openDropdown()" class="profile" src="img/default-profile.jpg" alt="Profile">
           @if (showDropdown) {
           <div class="dropdown">
-            <span>dropdown</span>
+            <div class="dropdown-profile">
+              <img class="dropdown-profile-img" src="img/default-profile.jpg" alt="Profile">
+              <span>Nombre</span>
+            </div>
+            <hr>
+            <button>Log Out</button>
           </div>
           }
         </div>

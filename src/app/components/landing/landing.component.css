@@ -8,7 +8,7 @@
   }
 
   & .main {
-    background-color: #111;
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   & .main-footer {

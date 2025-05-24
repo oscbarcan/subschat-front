@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+  import { Component, output } from '@angular/core';
 
 @Component({
   selector: 'app-landing-navbar',
@@ -9,8 +9,10 @@ import { Component } from '@angular/core';
 export class LandingNavbarComponent {
   isLogin = false;
   showDropdown = false;
+  appLayoutChange = output();
 
   openDropdown() {
-    this.showDropdown = true;
+    this.showDropdown = !this.showDropdown;
+    this.appLayoutChange.emit();
   }
 }
