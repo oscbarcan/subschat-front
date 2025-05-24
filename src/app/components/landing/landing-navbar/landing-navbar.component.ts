@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './landing-navbar.component.css'
 })
 export class LandingNavbarComponent {
+  isLogin = false;
+  showDropdown = false;
 
+  openDropdown() {
+    this.showDropdown = true;
+  }
 }

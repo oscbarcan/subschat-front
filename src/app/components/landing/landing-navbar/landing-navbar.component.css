@@ -1,3 +1,7 @@
+:host {
+  --main-color: #ff640a;
+}
+
 .nav-main {
   display: flex;
   align-items: center;
@@ -13,11 +17,12 @@
     .nav-section {
       display: flex;
       align-items: center;
+      gap: 10px;
 
       .logo {
         max-width: 200px;
         max-height: 200px;
-        color: #ff640a;
+        color: var(--main-color);
         margin-right: 1rem;
       }
 
@@ -42,43 +47,59 @@
         align-items: center;
         gap: 0.5rem;
         border-radius: 30px;
+      }
+      .user-icon {
+        width: 24px;
+        height: 24px;
+        color: var(--main-color);
+      }
 
-        .user-icon {
-          width: 24px;
-          height: 24px;
-          color: #ff640a;
+      .login-btn {
+        background-color: var(--main-color);
+        border: none;
+        padding: 0.5em 0.8em;
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #e55a00;
         }
+      }
 
-        .login-btn {
-          background-color: #ff640a;
-          border: none;
-          border-radius: 20px;
-          color: white;
-          font-weight: bold;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
+      .loged {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-          &:hover {
-            background-color: #e55a00;
-          }
-        }
-
-        .profile {
-          border: 1px solid black;
-          border-radius: 200px;
-          max-width: 50px;
-        }
-
-        .section {
-          min-height: 100%;
-
-          &.section:active {
-            background-color: #141519;
-          }
+        & a:hover {
+          background-color: #141519;
         }
 
         .save-chats {
           width: 50px;
+        }
+
+        .profile-container {
+          position: relative;
+          display: inline-block;
+
+          .profile {
+            border: 1px solid #000;
+            border-radius: 200px;
+            max-width: 50px;
+          }
+
+          .dropdown {
+            position: absolute;
+            background-color: #fff;
+            height: 20px;
+            top: 100%;
+            padding: 10px;
+            margin-top: 5px;
+          }
         }
       }
     }
