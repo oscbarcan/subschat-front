@@ -1,0 +1,1 @@
+export type PlatformName = 'Crunchyroll' | 'HBO' | 'Netflix' | 'Whatever' | 'Coming soon'
