@@ -6,13 +6,9 @@
   & .main-header {
     background-color: #23252b;
   }
-
-  & .main {
-    background-color: rgba(0, 0, 0, 0.8);
   }
 
   & .main-footer {
     background-color: aquamarine;
   }
-
 }

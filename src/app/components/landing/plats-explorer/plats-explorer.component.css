@@ -1,0 +1,65 @@
+:host {
+    --crunchy-color: #ff640a;
+    --HBO-color: #A086FE;
+    --netflix-color: #E50914;
+}
+
+.platforms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .platforms-section {
+        width: 70%;
+        display: flex;
+        overflow: hidden;
+
+        .platform-container {
+            padding-inline: 2rem;
+            padding-block: 1rem;
+            width: 200px;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ddd;
+            background-color: #222;
+
+            &:hover {
+                background-color: #333;
+                cursor: pointer;
+            }
+
+            &.crunchy:hover {
+                color: var(--crunchy-color);
+            }
+
+            &.crunchy.active {
+                color: var(--crunchy-color);
+            }
+
+            &.HBO:hover {
+                color: var(--HBO-color);
+            }
+
+            &.HBO.active {
+                color: var(--HBO-color);
+            }
+
+            &.netflix:hover {
+                color: var(--netflix-color);
+            }
+
+            &.netflix.active {
+                color: var(--netflix-color);
+            }
+            
+            &.active {
+                background-color: #444;
+                cursor: default;
+            }
+        }
+    }
+}

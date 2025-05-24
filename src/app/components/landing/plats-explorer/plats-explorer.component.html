@@ -1,0 +1,15 @@
+<div class="platforms-container">
+    <section class="platforms-section">
+        @for (platform of platforms; track platform.name) {
+            <div (click)="changePlatform(platform.name)" class="platform-container" [ngClass]="{
+                'active': platform.name == selectedPlatform(),
+                'HBO': platform.name == 'HBO',
+                'crunchy': platform.name == 'Crunchyroll',
+                'netflix': platform.name == 'Netflix'
+                }">
+                <span>{{platform.name}}</span>
+            </div>
+        }
+    </section>
+    <subs-explorer [currentPlatform]="selectedPlatform()"/>
+</div>
