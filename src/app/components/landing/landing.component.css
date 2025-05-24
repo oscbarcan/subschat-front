@@ -4,15 +4,14 @@
   grid-template-rows: auto 1fr auto;
 
   & .main-header {
-    background-color: chocolate;
+    background-color: #23252b;
   }
 
   & .main {
-    background-color: yellow;
+    background-color: #111;
   }
 
   & .main-footer {
     background-color: aquamarine;
   }
-
 }
