@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Platform } from '../interfaces/platform';
 
 @Injectable({
   providedIn: 'root',
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class PlatsSubsService {
   constructor() {}
 
-  private streamingPlatforms = [
+  private streamingPlatforms:Platform[] = [
     {
       name: 'Crunchyroll',
       /*
@@ -29,16 +30,20 @@ export class PlatsSubsService {
       ],
     },
     {
-      name: "HBO"
+      name: "HBO",
+      subscriptions: undefined
     },
     {
-      name: "Netflix"
+      name: "Netflix",
+      subscriptions: undefined
     },
     {
-      name: "Whatever"
+      name: "Whatever",
+      subscriptions: undefined
     },
     {
-      name: "Coming soon"
+      name: "Coming soon",
+      subscriptions: undefined
     }
   ];
 
