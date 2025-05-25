@@ -3,7 +3,7 @@
 }
 
 .subscriptions-container {
-    overflow: scroll;
+    overflow: hidden;
 
     & .subscriptions-section {
         display: flex;
