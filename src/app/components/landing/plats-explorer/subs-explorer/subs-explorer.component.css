@@ -10,6 +10,11 @@
         justify-content: center;
         flex-direction: row;
 
+        & .view-all-subs-container {
+            color: #fff;
+        }
+
+
         & .subscription-container {
             flex: 1 1 150px;
             padding-block: 0.5rem;
