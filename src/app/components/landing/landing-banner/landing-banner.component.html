@@ -1,6 +1,6 @@
 <div class="main-banner">
   @for (banner of banners; track $index) {
-  <div class="banner-section" [ngClass]="{'active':selected() == banner.name}" (click)="selectedBanner(banner.name)">
+  <div class="banner-section" [ngClass]="{'active':bannerInput() == banner.name}">
     <img [src]="'img/banners/'+banner.imageName" [alt]="banner.name+'-banner'">
   </div>
   }
