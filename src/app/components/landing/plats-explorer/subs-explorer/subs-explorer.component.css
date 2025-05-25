@@ -29,10 +29,12 @@
 
             &:hover {
                 background-color: #555;
+                cursor: pointer;
             }
 
             &.active {
                 background-color: #666;
+                cursor: default;
             }
 
             & .line {

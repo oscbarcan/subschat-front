@@ -50,9 +50,9 @@ export class SubsExplorerComponent implements OnInit {
     });
   }
 
-  constructor() {
-    setInterval(() => {
-      console.log(this.selectedSubscription());
-    }, 2000);
-  }
+  // constructor() {
+  //   setInterval(() => {
+  //     console.log(this.selectedSubscription());
+  //   }, 2000);
+  // }
 }
