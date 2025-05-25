@@ -38,7 +38,7 @@ export class PlatsSubsService {
       subscriptions: undefined
     },
     {
-      name: "Whatever",
+      name: "Amazon Prime",
       subscriptions: undefined
     },
     {
