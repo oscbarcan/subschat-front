@@ -11,7 +11,9 @@
                 </div>
             }
         }
-        <div class="subscription-container view-all-subs-container">
+        <div class="subscription-container view-all-subs-container" 
+        [ngClass]="{'active': selectedSubscription().name == 'All'}"
+        (click)="changeSelectedSubscription({name: 'All', membershipMonthsDuration: []}, 0)">
             <span class="line">View</span>
             <span class="line">all</span>
         </div>
