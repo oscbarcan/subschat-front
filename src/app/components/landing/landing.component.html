@@ -1,7 +1,8 @@
 <div class="root-container">
   <header class="main-header"><app-landing-navbar /></header>
   <main class="main">
-    <plats-explorer></plats-explorer>
+    <landing-banner [bannerInput]="bannerChangeDealer()"/>
+    <plats-explorer (changeBanner)="receiveBannerNameChange($event)"></plats-explorer>
   </main>
   <footer class="main-footer">footer</footer>
 </div>
