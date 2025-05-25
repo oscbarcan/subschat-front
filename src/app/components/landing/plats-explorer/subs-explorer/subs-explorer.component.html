@@ -1,1 +1,21 @@
-<p>subs-explorer works!</p>
+<div class="subscriptions-container">
+    <section class="subscriptions-section">
+        @for (subscription of platformSubscriptions(); track $index; let index=$index;) {
+            @for (monthsPerSubscription of subscription.membershipMonthsDuration; track $index) {
+                <div class="subscription-container" [ngClass]="{
+                    'active': subscription.name == selectedSubscription().name &&
+                    monthsPerSubscription == selectedSubscription().membershipMonthsDuration[0]}"
+                (click)="changeSelectedSubscription(subscription, monthsPerSubscription)">
+                    <span class="line sub-name sub-{{index}}">{{subscription.name }}</span>
+                    <span class="line sub-months">{{monthsPerSubscription}} months</span>
+                </div>
+            }
+        }
+        <div class="subscription-container view-all-subs-container" 
+        [ngClass]="{'active': selectedSubscription().name == 'All'}"
+        (click)="changeSelectedSubscription({name: 'All', membershipMonthsDuration: []}, 0)">
+            <span class="line">View</span>
+            <span class="line">all</span>
+        </div>
+    </section>
+</div>
