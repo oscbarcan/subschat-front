@@ -8,9 +8,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     .platforms-container {
-        max-width: 70%;
+        min-width: 70%;
         flex-direction: column;
 
         .platforms-section {
@@ -18,9 +18,9 @@
             overflow: hidden;
 
             .platform-container {
+                flex: 1 1 150px;
                 padding-inline: 2rem;
                 padding-block: 1rem;
-                width: 200px;
                 text-align: center;
                 font-weight: bold;
                 display: flex;
