@@ -1,18 +1,18 @@
-  import { Component, output } from '@angular/core';
+  import { Component, output, signal } from '@angular/core';
 
 @Component({
-  selector: 'app-landing-navbar',
+  selector: 'landing-navbar',
   imports: [],
   templateUrl: './landing-navbar.component.html',
   styleUrl: './landing-navbar.component.css'
 })
 export class LandingNavbarComponent {
-  isLogin = false;
-  showDropdown = false;
+  protected isLogued = signal<boolean>(false);
+  protected showDropdown = signal<boolean>(false);
   appLayoutChange = output();
 
   openDropdown() {
-    this.showDropdown = !this.showDropdown;
+    this.showDropdown.set(!this.showDropdown());
     this.appLayoutChange.emit();
   }
 }
