@@ -6,15 +6,6 @@
     </div>
     <div class="nav-section">
       @if (isLogued()) {
-        <div class="login">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 25" class="user-icon">
-            <path fill="currentColor" fill-rule="evenodd"
-              d="M11.667 1.75a5.417 5.417 0 1 0 0 10.834 5.417 5.417 0 0 0 0-10.834Zm-2.77 2.647a3.917 3.917 0 1 1 5.54 5.54 3.917 3.917 0 0 1-5.54-5.54ZM6.07 16.902A7.917 7.917 0 0 1 19.583 22.5a.75.75 0 0 0 1.5 0 9.417 9.417 0 1 0-18.833 0 .75.75 0 0 0 1.5 0c0-2.1.834-4.113 2.319-5.598Z"
-              clip-rule="evenodd" />
-          </svg>
-        </div>
-        <button class="login-btn">Login</button>
-      }@else{
         <div class="logued">
           <a href="#">
             <svg class="save-chats" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg"
@@ -38,8 +29,16 @@
             }
           </div>
         </div>
+      }@else{
+        <div class="login">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 25" class="user-icon">
+            <path fill="currentColor" fill-rule="evenodd"
+              d="M11.667 1.75a5.417 5.417 0 1 0 0 10.834 5.417 5.417 0 0 0 0-10.834Zm-2.77 2.647a3.917 3.917 0 1 1 5.54 5.54 3.917 3.917 0 0 1-5.54-5.54ZM6.07 16.902A7.917 7.917 0 0 1 19.583 22.5a.75.75 0 0 0 1.5 0 9.417 9.417 0 1 0-18.833 0 .75.75 0 0 0 1.5 0c0-2.1.834-4.113 2.319-5.598Z"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+        <button class="login-btn">Login</button>
       }
-
     </div>
   </div>
 </div>
