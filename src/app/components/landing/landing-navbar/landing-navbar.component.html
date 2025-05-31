@@ -2,7 +2,7 @@
   <div class="nav-container">
     <div class="nav-section">
       <a href="#"><img class="logo" src="img/subschat-temp-logo-orange.png" alt="subschat"></a>
-      <input class="search-bar" type="text" placeholder="Buscar...">
+      <input class="search-bar" type="text" placeholder="Search...">
     </div>
     <div class="nav-section">
       @if (isLogued()) {
@@ -25,9 +25,9 @@
             </svg>
           </a>
           <div class="profile-container">
-            <img (click)="toggleDropdown()" class="profile" src="img/default-profile.jpg" alt="Profile">
+            <img  (click)="openDropdown()" class="profile" src="img/default-profile.jpg" alt="Profile">
             @if (showDropdown()) {
-              <div class="dropdown">
+              <div (clickOutside)="showDropdown.set(false)" class="dropdown">
                 <div class="dropdown-profile">
                   <img class="dropdown-profile-img" src="img/default-profile.jpg" alt="Profile">
                   <span>DisplayName</span>
