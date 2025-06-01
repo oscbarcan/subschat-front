@@ -1,18 +1,17 @@
-  import { Component, output } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { ClickOutsideDirective } from '../../../directives/click-outside.directive';
 
 @Component({
-  selector: 'app-landing-navbar',
-  imports: [],
+  selector: 'landing-navbar',
+  imports: [ClickOutsideDirective],
   templateUrl: './landing-navbar.component.html',
-  styleUrl: './landing-navbar.component.css'
+  styleUrl: './landing-navbar.component.css',
 })
 export class LandingNavbarComponent {
-  isLogin = false;
-  showDropdown = false;
-  appLayoutChange = output();
+  protected isLogued = signal<boolean>(false);
+  protected showDropdown = signal<boolean>(false);
 
-  openDropdown() {
-    this.showDropdown = !this.showDropdown;
-    this.appLayoutChange.emit();
+  protected openDropdown() {
+    this.showDropdown.set(true);
   }
 }
