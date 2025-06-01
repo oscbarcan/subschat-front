@@ -10,10 +10,11 @@ import { PlatformName } from '../../../../types/platformName';
 import { PlatsSubsService } from '../../../../services/plats-subs.service';
 import { Subscription } from '../../../../types/subscription';
 import { NgClass } from '@angular/common';
+import { MonthsPipe } from '../../../../pipes/months.pipe';
 
 @Component({
   selector: 'subs-explorer',
-  imports: [NgClass],
+  imports: [NgClass, MonthsPipe],
   templateUrl: './subs-explorer.component.html',
   styleUrl: './subs-explorer.component.css',
 })

@@ -7,7 +7,7 @@
                     monthsPerSubscription == selectedSubscription().membershipMonthsDuration[0]}"
                 (click)="changeSelectedSubscription(subscription, monthsPerSubscription)">
                     <span class="line sub-name sub-{{index}}">{{subscription.name }}</span>
-                    <span class="line sub-months">{{monthsPerSubscription}} months</span>
+                    <span class="line sub-months">{{monthsPerSubscription | months}}</span>
                 </div>
             }
         }
