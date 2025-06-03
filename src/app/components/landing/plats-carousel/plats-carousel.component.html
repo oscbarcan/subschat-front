@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="content">
+    @for (card of cards(); track $index) {
+    <div class="card">
+      <div class="card-container">
+        <div class="card-img">
+          <img class="img" src="/img/banners/crunchyroll-banner.jpg">
+        </div>
+        <div class="card-info">
+          <div class="top-section">
+            <div class="service-name">{{card.subscription}}</div>
+            <div class="timestamp">{{card.timestamp}} days ago</div>
+          </div>
+          <div class="button-section">
+            <div class="persons">2/{{card.persons}}</div>
+            <div class="price">€{{card.price}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
