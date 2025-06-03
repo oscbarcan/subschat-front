@@ -12,36 +12,32 @@
     }
 
     & .main {
-        width: 100%;
-
         & .background-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             height: 100%;
 
-
-            & .c-1 {
+            & .left-container {
                 background: linear-gradient(to right, color-mix(in srgb, var(--primary-color) 50%, #fff 50%), #eee);
             }
 
-            & .c-2 {
+            & .right-container {
                 background: linear-gradient(to left, color-mix(in srgb, var(--primary-color) 50%, #fff 50%), #eee);
             }
         }
+
+        & .absolute-container {
+            top: 25%;
+            position: absolute;
+            width: 100%;
+
+            & .relative-container {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: color-mix(in srgb, color percentage, color percentage);
+            }
+        }
     }
-}
-
-
-.contenedor-que-suda {
-    top: 25%;
-    position: absolute;
-    width: 100%;
-}
-
-.relative-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: color-mix(in srgb, color percentage, color percentage);
 }
