@@ -17,7 +17,7 @@ export class PlatsSubsService {
       subscriptions: [
       {
           name: 'Ultimate Fan',
-          membershipMonthsDuration: [1, 12],
+          membershipMonthsDuration: [1],
         },
         {
           name: 'Mega Fan',
