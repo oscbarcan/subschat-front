@@ -1,0 +1,25 @@
+<div class="container">
+  <button class="prev-button"><img src="/img/arrow.png" alt="prev-button"></button>
+  <button class="next-button"><img src="/img/arrow.png" alt="next-button"></button>
+  <div class="content">
+    @for (card of cards(); track $index) {
+    <div class="card-container">
+      <div class="card">
+        <div class="card-img">
+          <img class="img" src="/img/banners/crunchyroll-banner.jpg">
+        </div>
+        <div class="card-info">
+          <div class="top-section">
+            <div class="service-name">{{card.subscription}}</div>
+            <div class="timestamp">{{card.timestamp}} days ago</div>
+          </div>
+          <div class="button-section">
+            <div class="persons">2/{{card.persons}}</div>
+            <div class="price">€{{card.price}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

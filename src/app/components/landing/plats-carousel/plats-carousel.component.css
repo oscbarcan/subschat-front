@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  position: relative;
+
+  & .prev-button,
+  .next-button {
+    border: none;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    background: none;
+  }
+
+  & .prev-button {
+    left: 11.5%;
+    transform: rotate(180deg);
+  }
+
+  & .next-button {
+    right: 11.5%;
+  }
+
+  & .prev-button img,
+  .next-button img {
+    height: 100%;
+  }
+
+  & .content {
+    max-width: 70%;
+    min-width: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+
+    & .card-container {
+      flex: 0 0 250px;
+      border: 1px solid #ccc;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      & .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        & .card-img {
+          height: 180px;
+          overflow: hidden;
+          background-color: #eee;
+
+          & .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        & .card-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 16px;
+          gap: 12px;
+
+          & .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & .service-name {
+              font-size: 1.2rem;
+              font-weight: bold;
+              color: #333;
+            }
+
+            & .timestamp {
+              font-size: 0.8rem;
+              color: #888;
+            }
+          }
+
+          & .button-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & .persons {
+              font-size: 0.95rem;
+              color: #555;
+            }
+
+            & .price {
+              font-size: 1.2rem;
+              font-weight: bold;
+              color: #e67e22;
+            }
+          }
+        }
+      }
+    }
+  }
+  & .content::-webkit-scrollbar {
+    display: none;
+  }
+}
