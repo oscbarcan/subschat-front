@@ -34,13 +34,22 @@
   }
 
   & .content {
-    max-width: 70%;
-    min-width: 70%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     gap: 20px;
     overflow-x: auto;
     padding: 20px;
+    scroll-behavior: smooth;
+    /* Styles for removing scrollbar*/
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    /* End styles for removing scrollbar*/
+
 
     & .card-container {
       flex: 0 0 250px;
@@ -116,6 +125,7 @@
       }
     }
   }
+
   & .content::-webkit-scrollbar {
     display: none;
   }

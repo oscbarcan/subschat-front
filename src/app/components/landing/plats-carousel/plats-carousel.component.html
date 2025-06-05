@@ -1,6 +1,6 @@
 <div class="container">
-  <button class="prev-button"><img src="/img/arrow.png" alt="prev-button"></button>
-  <button class="next-button"><img src="/img/arrow.png" alt="next-button"></button>
+  <button class="prev-button" (click)="scrollLeft()"><img src="/img/arrow.png" alt="prev-button"></button>
+  <button class="next-button" (click)="scrollRight()"><img src="/img/arrow.png" alt="next-button"></button>
   <div class="content">
     @for (card of cards(); track $index) {
     <div class="card-container">
