@@ -1,3 +1,28 @@
+:host {
+  --card-width: 250px;
+  --cards-gap: 20px;
+  --cards-number: 5;
+/* 
+  FIXME: Try to do this on a dynamic way 
+*/
+  @media (max-width: 1500px) {
+    --cards-number: 4;
+  }
+
+  @media (max-width: 1200px) {
+    --cards-number: 3;
+  }
+
+  @media (max-width: 850px) {
+    --cards-number: 2;
+  }
+
+  @media (max-width: 450px) {
+    --cards-number: 1;
+  }
+}
+
+
 .container {
   display: flex;
   justify-content: center;
@@ -34,10 +59,10 @@
   }
 
   & .content {
-    width: 70%;
+    width: calc((var(--cards-number) * var(--card-width)) + ((var(--cards-number) - 1) * var(--cards-gap)));
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: var(--cards-gap);
     overflow-x: auto;
     padding: 20px;
     scroll-behavior: smooth;
@@ -48,11 +73,12 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
     /* End styles for removing scrollbar*/
 
 
     & .card-container {
-      flex: 0 0 250px;
+      flex: 0 0 var(--card-width);
       border: 1px solid #ccc;
       border-radius: 16px;
       overflow: hidden;
