@@ -27,7 +27,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: beige;
   position: relative;
 
   & .prev-button,
@@ -98,7 +97,7 @@
         height: 100%;
 
         & .card-img {
-          height: 180px;
+          height: 300px;
           overflow: hidden;
           background-color: #eee;
 
