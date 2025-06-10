@@ -11,7 +11,7 @@ export class BannersService {
   private banners:Banner[] = [
     {
       name: 'Crunchyroll',
-      imageName: 'crunchyroll-banner.jpg'
+      imageName: 'crunchy-banner.jpg'
     },
     {
       name: 'HBO',
@@ -23,7 +23,7 @@ export class BannersService {
     },
     {
       name: 'Amazon Prime',
-      imageName: 'amazon-prime-banner.jpg'
+      imageName: 'prime-banner.jpg'
     },
   ];
 
