@@ -7,7 +7,7 @@ import { Component, input, signal } from '@angular/core';
   styleUrl: './plats-carousel.component.css',
 })
 export class PlatsCarouselComponent {
-  public mode = input<'complex'|'simple'>('simple');
+  public mode = input<'complex'|'simple'>('complex');
   cards = signal([
     {
       subscription: '1',
