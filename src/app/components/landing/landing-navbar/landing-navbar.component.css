@@ -42,18 +42,18 @@
         }
       }
 
-      & .login {
+      /* & .login {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         border-radius: 30px;
-      }
+      } */
 
-      & .user-icon {
+      /* & .user-icon {
         width: 24px;
         height: 24px;
         color: var(--main-color);
-      }
+      } */
 
       & .login-btn {
         background-color: var(--main-color);
@@ -61,7 +61,8 @@
         padding: 0.5em 0.8em;
         border-radius: 20px;
         color: white;
-        font-weight: bold;
+        font-size: 1rem;
+        font-weight: bolder;
         cursor: pointer;
         transition: background-color 0.3s ease;
 
