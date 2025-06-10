@@ -2,7 +2,9 @@
   <div class="nav-container">
     <div class="nav-section">
       <a [routerLink]="'/'"><img class="logo" src="img/subschat-temp-logo-orange.png" alt="subschat"></a>
-      <input class="search-bar" type="text" placeholder="Search...">
+      @if (isLogued()) {
+        <input class="search-bar" type="text" placeholder="Search...">
+      }
     </div>
     <div class="nav-section">
       @if (isLogued()) {
