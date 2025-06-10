@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'plats-carousel',
@@ -7,6 +7,7 @@ import { Component, signal } from '@angular/core';
   styleUrl: './plats-carousel.component.css',
 })
 export class PlatsCarouselComponent {
+  public mode = input<'complex'|'simple'>('simple');
   cards = signal([
     {
       subscription: '1',
@@ -78,7 +79,7 @@ export class PlatsCarouselComponent {
     const content = document.querySelector('.content');
     content!.scrollLeft -= containerWidth! + 20;
   }
-  
+
   // FIXME: Refactor this method
   scrollRight() {
     const card = document.querySelector('.card-container');
