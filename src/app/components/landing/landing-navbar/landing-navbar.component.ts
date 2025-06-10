@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './landing-navbar.component.css',
 })
 export class LandingNavbarComponent {
-  protected isLogued = signal<boolean>(false);
+  protected isLogued = signal<boolean>(true);
   protected showDropdown = signal<boolean>(false);
 
   protected openDropdown() {

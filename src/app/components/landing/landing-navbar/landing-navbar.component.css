@@ -39,10 +39,16 @@
         background-color: #fff;
         transition: box-shadow 0.3s ease;
 
+        @media (max-width: 800px) {
+          display: none;
+        }
+
         &:focus {
           box-shadow: 0 0 0 3px rgba(255, 100, 10, 0.8);
         }
       }
+
+
 
       /* & .login {
         display: flex;
@@ -79,7 +85,28 @@
         align-items: center;
         gap: 10px;
 
-        & a:hover {
+        & .search-icon-button {
+          border: none;
+          background-color: #23252b;
+
+          @media (min-width: 801px) {
+            display: none;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          .search-icon {
+            fill: #ddd;
+            aspect-ratio: 1 / 1;
+            width: 50px;
+
+          }
+        }
+
+        & a:hover,
+        button:hover {
           background-color: #141519;
         }
 
