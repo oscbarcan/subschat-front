@@ -8,6 +8,8 @@
         <div class="card-img">
           <img class="img" src="/img/carousel/crunchyroll-carousel.jpg">
         </div>
+
+        @if (mode() == 'complex') {
         <div class="card-info">
           <div class="top-section">
             <div class="service-name">{{card.subscription}}</div>
@@ -18,6 +20,8 @@
             <div class="price">€{{card.price}}</div>
           </div>
         </div>
+        }
+
       </div>
     </div>
     }
