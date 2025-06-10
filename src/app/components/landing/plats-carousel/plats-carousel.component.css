@@ -2,8 +2,9 @@
   --card-width: 250px;
   --cards-gap: 20px;
   --cards-number: 5;
-/* 
-  FIXME: Try to do this on a dynamic way 
+  --arrow-distance: calc((100% - ((var(--cards-number) * var(--card-width)) + ((var(--cards-number) - 1) * var(--cards-gap))) ) / 2 - 65px);
+  /*
+  FIXME: Try to do this on a dynamic way
 */
   @media (max-width: 1500px) {
     --cards-number: 4;
@@ -21,7 +22,6 @@
     --cards-number: 1;
   }
 }
-
 
 .container {
   display: flex;
@@ -45,12 +45,12 @@
   }
 
   & .prev-button {
-    left: 11.5%;
+    left: var(--arrow-distance);
     transform: rotate(180deg);
   }
 
   & .next-button {
-    right: 11.5%;
+    right: var(--arrow-distance);
   }
 
   & .prev-button img,
@@ -59,7 +59,10 @@
   }
 
   & .content {
-    width: calc((var(--cards-number) * var(--card-width)) + ((var(--cards-number) - 1) * var(--cards-gap)));
+    width: calc(
+      (var(--cards-number) * var(--card-width)) +
+        ((var(--cards-number) - 1) * var(--cards-gap))
+    );
     display: flex;
     flex-direction: row;
     gap: var(--cards-gap);
@@ -75,7 +78,6 @@
     }
 
     /* End styles for removing scrollbar*/
-
 
     & .card-container {
       flex: 0 0 var(--card-width);
