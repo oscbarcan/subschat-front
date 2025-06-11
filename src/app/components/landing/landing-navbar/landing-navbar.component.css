@@ -1,5 +1,14 @@
 :host {
   --main-color: #ff640a;
+  --container-width: 70%;
+  --icons-size: 50px;
+  --navbar-height: 4rem;
+
+  @media (max-width: 600px) {
+    --icons-size: 30px;
+    --navbar-height: 3rem;
+    --container-width: 90%; 
+  }
 }
 
 .nav-main {
@@ -9,10 +18,14 @@
 
   & .nav-container {
     display: flex;
-    width: 70%;
+    width: var(--container-width);
     flex-direction: row;
     justify-content: space-between;
     height: 4rem;
+
+    @media (max-width: 600px) {
+      height: 3rem;
+    }
 
     & .nav-section {
       display: flex;
@@ -20,7 +33,7 @@
       gap: 10px;
 
       & .logo {
-        max-width: 150px;
+        max-height: var(--icons-size);
         color: var(--main-color);
         margin-right: 1rem;
         aspect-ratio: 2 / 1;
@@ -74,6 +87,12 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
 
+        @media (max-width: 600px) {
+          padding: 0.2em 0.5em;
+          font-size: medium;
+          font-weight: 600;
+        }
+
         &:hover {
           background-color: #e55a00;
         }
@@ -100,7 +119,7 @@
           .search-icon {
             fill: #ddd;
             aspect-ratio: 1 / 1;
-            width: 50px;
+            width: var(--icons-size);
 
           }
         }
@@ -111,7 +130,7 @@
         }
 
         & .save-chats {
-          width: 50px;
+          width: var(--icons-size);
         }
 
         & .profile-container {
@@ -121,7 +140,7 @@
           & .profile {
             border: 1px solid #000;
             border-radius: 200px;
-            max-width: 50px;
+            width: var(--icons-size);
             cursor: pointer;
           }
 
