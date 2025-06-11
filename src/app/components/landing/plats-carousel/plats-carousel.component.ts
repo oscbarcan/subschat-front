@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, ElementRef, inject, input, signal } from '@angular/core';
 
 @Component({
   selector: 'plats-carousel',
@@ -7,7 +7,8 @@ import { Component, input, signal } from '@angular/core';
   styleUrl: './plats-carousel.component.css',
 })
 export class PlatsCarouselComponent {
-  public mode = input<'complex'|'simple'>('complex');
+  public mode = input<'complex' | 'simple'>('complex');
+  private element = inject(ElementRef).nativeElement as HTMLElement;
   cards = signal([
     {
       subscription: '1',
@@ -71,21 +72,19 @@ export class PlatsCarouselComponent {
     },
   ]);
 
-  // FIXME: Refactor this method
   scrollLeft() {
-    const card = document.querySelector('.card-container');
+    const content = this.element.querySelector('.content');
+    const card = this.element.querySelector('.card-container');
     const cardDimension = card?.getBoundingClientRect();
     const containerWidth = cardDimension?.width;
-    const content = document.querySelector('.content');
     content!.scrollLeft -= containerWidth! + 20;
   }
 
-  // FIXME: Refactor this method
   scrollRight() {
-    const card = document.querySelector('.card-container');
+    const content = this.element.querySelector('.content');
+    const card = this.element.querySelector('.card-container');
     const cardDimension = card?.getBoundingClientRect();
     const containerWidth = cardDimension?.width;
-    const content = document.querySelector('.content');
     content!.scrollLeft += containerWidth! + 20;
   }
 }
