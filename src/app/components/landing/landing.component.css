@@ -28,9 +28,8 @@
 
     & .carousel-title-container {
       width: 70%;
-      align-items: center;
-      justify-items: center;
-
+      text-align: center;
+      
       & span {
         font: 1.6rem "metropolis", Arial, Helvetica, sans-serif;
         font-weight: 600;
