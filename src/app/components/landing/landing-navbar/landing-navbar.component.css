@@ -33,7 +33,7 @@
       gap: 10px;
 
       & .logo {
-        max-height: var(--icons-size);
+        max-width: calc(var(--icons-size) * 3);
         color: var(--main-color);
         margin-right: 1rem;
         aspect-ratio: 2 / 1;
