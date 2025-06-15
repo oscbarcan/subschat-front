@@ -11,8 +11,13 @@ import { RouterLink } from '@angular/router';
 export class LandingNavbarComponent {
   protected isLogued = signal<boolean>(true);
   protected showDropdown = signal<boolean>(false);
+  protected showSearchDropdown = signal<boolean>(false);
 
   protected openDropdown() {
     this.showDropdown.set(true);
+  }
+
+  protected toggleSearchDropdown() {
+    this.showSearchDropdown.set(!this.showSearchDropdown());
   }
 }
