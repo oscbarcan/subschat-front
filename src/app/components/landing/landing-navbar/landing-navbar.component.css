@@ -37,7 +37,6 @@
         max-width: calc(var(--icons-size) * 3);
         color: var(--main-color);
         margin-right: 1rem;
-        aspect-ratio: 2 / 1;
       }
 
       & .search-bar {
@@ -236,7 +235,7 @@
         }
       }
 
-      & .input-search-icon {
+      & .input-icon {
         width: var(--input-seach-icon-width);
         aspect-ratio: 1 / 1;
         position: absolute;
