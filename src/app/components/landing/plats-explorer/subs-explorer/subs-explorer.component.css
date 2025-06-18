@@ -1,71 +1,82 @@
 :host {
-    --subscription-primary-color: #ff640a;
+  --subscription-primary-color: #ff640a;
 }
 
 .subscriptions-container {
-    overflow: hidden;
+  overflow: hidden;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 
-    & .subscriptions-section {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
+  & .subscriptions-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 
-        & .view-all-subs-container {
-            color: #fff;
-        }
-
-
-        & .subscription-container {
-            flex: 1 1 150px;
-            padding-block: 0.5rem;
-            min-width: 100px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #444;
-            flex-direction: column;
-            row-gap: 5px;
-
-            &:hover {
-                background-color: #555;
-                cursor: pointer;
-            }
-
-            &.active {
-                background-color: #666;
-                cursor: default;
-            }
-
-            & .line {
-                display: block;
-
-                &.sub-name {
-                    font-weight: bold;
-
-                    &.sub-0 {
-                        color: var(--subscription-primary-color);
-                    }
-
-                    &.sub-1 {
-                        color: color-mix(in srgb, var(--subscription-primary-color) 80%, #eee 20%);
-                    }
-
-                    &.sub-2 {
-                        color: color-mix(in srgb, var(--subscription-primary-color) 60%, #eee 40%);
-                    }
-
-                    &.sub-3 {
-                        color: color-mix(in srgb, var(--subscription-primary-color) 40%, #eee 60%);
-                    }
-
-                }
-
-                &.sub-months {
-                    color: #eee;
-                }
-            }
-
-        }
+    & .view-all-subs-container {
+      color: #fff;
     }
+
+    & .subscription-container {
+      flex: 1 1 150px;
+      padding-block: 0.5rem;
+      min-width: 100px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #444;
+      flex-direction: column;
+      row-gap: 5px;
+
+      &:hover {
+        background-color: #555;
+        cursor: pointer;
+      }
+
+      &.active {
+        background-color: #666;
+        cursor: default;
+      }
+
+      & .line {
+        display: block;
+
+        &.sub-name {
+          font-weight: bold;
+
+          &.sub-0 {
+            color: var(--subscription-primary-color);
+          }
+
+          &.sub-1 {
+            color: color-mix(
+              in srgb,
+              var(--subscription-primary-color) 80%,
+              #eee 20%
+            );
+          }
+
+          &.sub-2 {
+            color: color-mix(
+              in srgb,
+              var(--subscription-primary-color) 60%,
+              #eee 40%
+            );
+          }
+
+          &.sub-3 {
+            color: color-mix(
+              in srgb,
+              var(--subscription-primary-color) 40%,
+              #eee 60%
+            );
+          }
+        }
+
+        &.sub-months {
+          color: #eee;
+        }
+      }
+    }
+  }
 }

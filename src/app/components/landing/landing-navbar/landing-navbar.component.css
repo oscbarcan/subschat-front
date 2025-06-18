@@ -1,5 +1,15 @@
 :host {
   --main-color: #ff640a;
+  --container-width: 70%;
+  --icons-size: 50px;
+  --navbar-height: 4rem;
+  --input-seach-icon-width: 25px;
+
+  @media (max-width: 600px) {
+    --icons-size: 30px;
+    --navbar-height: 3rem;
+    --container-width: 90%;
+  }
 }
 
 .nav-main {
@@ -9,10 +19,14 @@
 
   & .nav-container {
     display: flex;
-    width: 70%;
+    width: var(--container-width);
     flex-direction: row;
     justify-content: space-between;
-    min-height: 5rem;
+    height: 4rem;
+
+    @media (max-width: 600px) {
+      height: 3rem;
+    }
 
     & .nav-section {
       display: flex;
@@ -20,40 +34,47 @@
       gap: 10px;
 
       & .logo {
-        max-width: 200px;
-        max-height: 200px;
+        max-width: calc(var(--icons-size) * 3);
         color: var(--main-color);
         margin-right: 1rem;
       }
 
       & .search-bar {
         min-height: 30px;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
+        /* padding-block: 0.2rem; */
+        padding: 0.2rem;
+        padding-inline: 1rem;
+        border-radius: 15px;
         border: none;
         outline: none;
         font-size: 16px;
-        width: 250px;
+        width: 15rem;
         background-color: #fff;
         transition: box-shadow 0.3s ease;
+
+        @media (max-width: 800px) {
+          display: none;
+        }
 
         &:focus {
           box-shadow: 0 0 0 3px rgba(255, 100, 10, 0.8);
         }
       }
 
-      & .login {
+
+
+      /* & .login {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         border-radius: 30px;
-      }
+      } */
 
-      & .user-icon {
+      /* & .user-icon {
         width: 24px;
         height: 24px;
         color: var(--main-color);
-      }
+      } */
 
       & .login-btn {
         background-color: var(--main-color);
@@ -61,9 +82,16 @@
         padding: 0.5em 0.8em;
         border-radius: 20px;
         color: white;
-        font-weight: bold;
+        font-size: 1rem;
+        font-weight: bolder;
         cursor: pointer;
         transition: background-color 0.3s ease;
+
+        @media (max-width: 600px) {
+          padding: 0.2em 0.5em;
+          font-size: medium;
+          font-weight: 600;
+        }
 
         &:hover {
           background-color: #e55a00;
@@ -76,12 +104,33 @@
         align-items: center;
         gap: 10px;
 
-        & a:hover {
+        & .search-icon-button {
+          border: none;
+          background-color: #23252b;
+
+          @media (min-width: 801px) {
+            display: none;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          .search-icon {
+            fill: #ddd;
+            aspect-ratio: 1 / 1;
+            width: var(--icons-size);
+
+          }
+        }
+
+        & a:hover,
+        button:hover {
           background-color: #141519;
         }
 
         & .save-chats {
-          width: 50px;
+          width: var(--icons-size);
         }
 
         & .profile-container {
@@ -91,7 +140,7 @@
           & .profile {
             border: 1px solid #000;
             border-radius: 200px;
-            max-width: 50px;
+            width: var(--icons-size);
             cursor: pointer;
           }
 
@@ -145,5 +194,57 @@
         }
       }
     }
+  }
+}
+
+
+.extra-container {
+  background-color: color-mix(in srgb, #23252b 90%, white 10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ddd;
+
+
+  & .searcher-input-container {
+    width: var(--container-width);
+    padding-block: 1rem;
+
+    & .product-label {
+      font-weight: bold;
+    }
+    & .input {
+      position: relative;
+      margin-top: 5px;
+
+
+      & .search-bar {
+        box-sizing: border-box;
+        width: 100%;
+        padding-block: 0.2rem;
+        padding-left: 0.5rem;
+        padding-right: calc(var(--input-seach-icon-width) + 5px);
+        border-radius: 5px;
+        outline: none;
+        font-size: 16px;
+        border: #888 solid 1px;
+        transition: box-shadow 0.3s ease;
+  
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(255, 100, 10, 0.8);
+        }
+      }
+
+      & .input-icon {
+        width: var(--input-seach-icon-width);
+        aspect-ratio: 1 / 1;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        fill: #888;
+        cursor: pointer;
+      }
+    }
+
   }
 }
