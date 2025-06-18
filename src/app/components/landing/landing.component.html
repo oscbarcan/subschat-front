@@ -1,23 +1,8 @@
 <div class="root-container">
   <header class="main-header"><landing-navbar /></header>
   <main class="main">
-    <!-- <landing-banner [bannerInput]="bannerChangeDealer()" /> -->
-    <!-- <plats-explorer (changeBanner)="receiveBannerNameChange($event)"></plats-explorer> -->
-    <div class="banner-carousel">
-      <plats-carousel></plats-carousel>
-    </div>
-    <div class="best-offers-carousel">
-      <div class="carousel-title-container">
-        <span>Best Offers</span>
-      </div>
-      <plats-carousel></plats-carousel>
-    </div>
-    <div class="apps-carousel">
-      <div class="carousel-title-container">
-        <span>Direct Apps</span>
-      </div>
-      <plats-carousel [mode]="'simple'"></plats-carousel>
-    </div>
+    <landing-banner [bannerInput]="bannerChangeDealer()"/>
+    <plats-explorer (changeBanner)="receiveBannerNameChange($event)"></plats-explorer>
   </main>
-  <footer class="main-footer"><landing-footer /></footer>
+  <footer class="main-footer">footer</footer>
 </div>
