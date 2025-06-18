@@ -1,0 +1,76 @@
+<div class="nav-main">
+  <div class="nav-container">
+    <div class="nav-section">
+      <a [routerLink]="'/'"><img class="logo" src="img/subschat-temp-logo-orange.png" alt="subschat"></a>
+      @if (isLogued()) {
+      <input class="search-bar" (keyup.enter)="searchProduct()" [formControl]="productInput" type="text" placeholder="Crunchyroll">
+      }
+    </div>
+    <div class="nav-section">
+      @if (isLogued()) {
+      <div class="logued">
+        <button class="search-icon-button" (click)="toggleSearchDropdown()">
+          <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M10.035,18.069a7.981,7.981,0,0,0,3.938-1.035l3.332,3.332a2.164,2.164,0,0,0,3.061-3.061l-3.332-3.332A8.032,8.032,0,0,0,4.354,4.354a8.034,8.034,0,0,0,5.681,13.715ZM5.768,5.768A6.033,6.033,0,1,1,4,10.035,5.989,5.989,0,0,1,5.768,5.768Z">
+              </path>
+            </g>
+          </svg>
+        </button>
+        <a href="#">
+          <svg class="save-chats" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg"
+            aria-labelledby="watchlist-svg" aria-hidden="true" role="img" fill="orange">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M19.0001 20.5858C19.0001 21.4767 17.9229 21.9229 17.293 21.2929L12.0001 16L6.7071 21.2929C6.07714 21.9229 5 21.4767 5 20.5858L5.00006 3H19.0001V20.5858ZM7.00001 18.1716L7.00006 5H17.0001V18.1716L12.0001 13.1716L7.00001 18.1716Z">
+            </path>
+          </svg>
+        </a>
+        <div class="profile-container">
+          <img (click)="openDropdown()" class="profile" src="img/default-profile.jpg" alt="Profile">
+          @if (showDropdown()) {
+          <div (clickOutside)="showDropdown.set(false)" class="dropdown">
+            <div class="dropdown-profile">
+              <img class="dropdown-profile-img" src="img/default-profile.jpg" alt="Profile">
+              <span>DisplayName</span>
+            </div>
+            <hr class="profile-separator">
+            <button>Log Out</button>
+          </div>
+          }
+        </div>
+      </div>
+      }@else{
+      <!-- <div class="login">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 25" class="user-icon">
+            <path fill="currentColor" fill-rule="evenodd"
+              d="M11.667 1.75a5.417 5.417 0 1 0 0 10.834 5.417 5.417 0 0 0 0-10.834Zm-2.77 2.647a3.917 3.917 0 1 1 5.54 5.54 3.917 3.917 0 0 1-5.54-5.54ZM6.07 16.902A7.917 7.917 0 0 1 19.583 22.5a.75.75 0 0 0 1.5 0 9.417 9.417 0 1 0-18.833 0 .75.75 0 0 0 1.5 0c0-2.1.834-4.113 2.319-5.598Z"
+              clip-rule="evenodd" />
+          </svg>
+        </div> -->
+      <button [routerLink]="'/login'" class="login-btn">Login</button>
+      }
+    </div>
+  </div>
+</div>
+@if (showSearchDropdown()) {
+  <div class="extra-container">
+    <div class="searcher-input-container">
+      <label class="product-label" for="product-searcher" >Product</label>
+      <div class="input">
+        <input id="product-searcher" (keyup.enter)="searchProduct()" [formControl]="productInput" class="search-bar" type="text" placeholder="Crunchyroll">
+        <svg (click)="searchProduct()" class="input-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M10.035,18.069a7.981,7.981,0,0,0,3.938-1.035l3.332,3.332a2.164,2.164,0,0,0,3.061-3.061l-3.332-3.332A8.032,8.032,0,0,0,4.354,4.354a8.034,8.034,0,0,0,5.681,13.715ZM5.768,5.768A6.033,6.033,0,1,1,4,10.035,5.989,5.989,0,0,1,5.768,5.768Z">
+              </path>
+            </g>
+          </svg>
+      </div>
+    </div>
+  </div>
+}

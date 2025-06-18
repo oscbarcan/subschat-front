@@ -1,0 +1,24 @@
+.main-banner {
+  display: flex;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 0px;
+
+  .banner-section {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    transition: flex 0.5s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+  .active {
+    flex: 3 !important;
+  }
+}

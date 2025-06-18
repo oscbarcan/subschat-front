@@ -1,0 +1,57 @@
+.root-container {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+
+  & .main-header {
+    background-color: #23252b;
+  }
+
+  & .main {
+    background-color: #111;
+  }
+
+  & .main-footer {
+    background-color: #23252b;
+  }
+  & .banner-carousel {
+    background-color: #f5f5dc;
+    padding-bottom: 20px;
+  }
+  & .best-offers-carousel,
+  .apps-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    & .carousel-title-container {
+      width: 70%;
+      text-align: center;
+      
+      & span {
+        font: 1.6rem "metropolis", Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 32px;
+        text-transform: uppercase;
+        color: #222;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 250px;
+        height: 3px;
+        background-color: #333;
+        margin: 8px auto 0;
+      }
+    }
+  }
+  .best-offers-carousel {
+    background-color: #e0e0c0;
+  }
+  & .apps-carousel {
+    background-color: #f5f5dc;
+  }
+}

@@ -1,0 +1,159 @@
+:host {
+  --card-width: 250px;
+  --cards-gap: 20px;
+  --cards-number: 5;
+  --arrow-distance: calc((100% - ((var(--cards-number) * var(--card-width)) + ((var(--cards-number) - 1) * var(--cards-gap))) ) / 2 - 65px);
+  /*
+  FIXME: Try to do this on a dynamic way
+*/
+  @media (max-width: 1500px) {
+    --cards-number: 4;
+  }
+
+  @media (max-width: 1200px) {
+    --cards-number: 3;
+  }
+
+  @media (max-width: 850px) {
+    --cards-number: 2;
+  }
+
+  @media (max-width: 600px) {
+    --cards-number: 1;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & .prev-button,
+  .next-button {
+    border: none;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    background: none;
+  }
+
+  & .prev-button {
+    left: var(--arrow-distance);
+    transform: rotate(180deg);
+  }
+
+  & .next-button {
+    right: var(--arrow-distance);
+  }
+
+  & .prev-button img,
+  .next-button img {
+    height: 100%;
+  }
+
+  & .content {
+    width: calc(
+      (var(--cards-number) * var(--card-width)) +
+        ((var(--cards-number) - 1) * var(--cards-gap))
+    );
+    display: flex;
+    flex-direction: row;
+    gap: var(--cards-gap);
+    overflow-x: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+    /* Styles for removing scrollbar*/
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* End styles for removing scrollbar*/
+
+    & .card-container {
+      flex: 0 0 var(--card-width);
+      border: 1px solid #ccc;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      & .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        & .card-img {
+          height: 300px;
+          overflow: hidden;
+          background-color: #eee;
+
+          & .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        & .card-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 16px;
+          gap: 12px;
+
+          & .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & .service-name {
+              font-size: 1.2rem;
+              font-weight: bold;
+              color: #333;
+            }
+
+            & .timestamp {
+              font-size: 0.8rem;
+              color: #888;
+            }
+          }
+
+          & .button-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & .persons {
+              font-size: 0.95rem;
+              color: #555;
+            }
+
+            & .price {
+              font-size: 1.2rem;
+              font-weight: bold;
+              color: #e67e22;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .content::-webkit-scrollbar {
+    display: none;
+  }
+}

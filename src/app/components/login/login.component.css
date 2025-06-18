@@ -1,0 +1,43 @@
+:host {
+    --primary-color: #23252b;
+}
+
+.main-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100dvh;
+
+    & .navbar-container {
+        background-color: var(--primary-color);
+    }
+
+    & .main {
+        & .background-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100%;
+
+            & .left-container {
+                background: linear-gradient(to right, color-mix(in srgb, var(--primary-color) 50%, #fff 50%), #eee);
+            }
+
+            & .right-container {
+                background: linear-gradient(to left, color-mix(in srgb, var(--primary-color) 50%, #fff 50%), #eee);
+            }
+        }
+
+        & .absolute-container {
+            top: 25%;
+            position: absolute;
+            width: 100%;
+
+            & .relative-container {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: color-mix(in srgb, color percentage, color percentage);
+            }
+        }
+    }
+}
