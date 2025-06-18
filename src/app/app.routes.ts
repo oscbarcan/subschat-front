@@ -17,3 +17,4 @@ export const routes: Routes = [
     component: LoaderComponent,
   },
 ];
+
