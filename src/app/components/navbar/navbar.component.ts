@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ClickOutsideDirective } from '../../directives/click-outside.directive';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'navbar',
-  imports: [ClickOutsideDirective, RouterLink, ReactiveFormsModule],
+  imports: [ClickOutsideDirective, RouterLink, ReactiveFormsModule, LoaderComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
