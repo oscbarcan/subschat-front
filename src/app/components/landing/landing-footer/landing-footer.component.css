@@ -2,13 +2,14 @@
   --social-icons-size: 50px;
   --columns-per-row: 4;
   --total-rows: 1;
-
+  --icons-alignment: center;
 }
 
 @media (max-width: 900px) {
   :host {
     --columns-per-row: 2;
     --total-rows: 2;
+    --icons-alignment: normal;
   }
 }
 
@@ -46,7 +47,7 @@
         & .social-section {
           display: flex;
           justify-content: center;
-          align-items: center;
+          align-items: var(--icons-alignment);
           flex-direction: row;
           gap: 20px;
 
