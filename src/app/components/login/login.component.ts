@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { AuthComponent } from '@triwebdev/auth-component';
-import { LandingNavbarComponent } from '../landing/landing-navbar/landing-navbar.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
-  imports: [AuthComponent, LandingNavbarComponent],
+  imports: [AuthComponent, NavbarComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

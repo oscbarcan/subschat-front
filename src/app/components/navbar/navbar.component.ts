@@ -1,17 +1,16 @@
 import { Component, signal } from '@angular/core';
-import { ClickOutsideDirective } from '../../../directives/click-outside.directive';
 import { RouterLink } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { LoaderComponent } from '../../loader/loader.component';
+import { ClickOutsideDirective } from '../../directives/click-outside.directive';
 
 @Component({
-  selector: 'landing-navbar',
-  imports: [ClickOutsideDirective, RouterLink, ReactiveFormsModule, LoaderComponent],
-  templateUrl: './landing-navbar.component.html',
-  styleUrl: './landing-navbar.component.css',
+  selector: 'navbar',
+  imports: [ClickOutsideDirective, RouterLink, ReactiveFormsModule],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
 })
-  
-export class LandingNavbarComponent {
+
+export class NavbarComponent {
   protected isLogued = signal<boolean>(true);
   protected showDropdown = signal<boolean>(false);
   protected showSearchDropdown = signal<boolean>(false);
@@ -29,7 +28,7 @@ export class LandingNavbarComponent {
   }
 
   protected searchProduct() {
-    /* Missing logic of sending info to the backend */    
+    /* Missing logic of sending info to the backend */
     this.productInput.setValue('');
     this.showInputSearcher.set(false);
 
