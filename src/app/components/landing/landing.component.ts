@@ -1,14 +1,14 @@
 import { Component, signal } from '@angular/core';
-import { LandingNavbarComponent } from "./landing-navbar/landing-navbar.component";
 import { PlatsExplorerComponent } from './plats-explorer/plats-explorer.component';
 import { LandingBannerComponent } from './landing-banner/landing-banner.component';
 import { PlatformName } from '../../types/platformName';
 import { PlatsCarouselComponent } from "./plats-carousel/plats-carousel.component";
 import { LandingFooterComponent } from "./landing-footer/landing-footer.component";
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-landing',
-  imports: [PlatsExplorerComponent, LandingNavbarComponent, LandingBannerComponent, PlatsCarouselComponent, LandingFooterComponent],
+  imports: [PlatsExplorerComponent, NavbarComponent, LandingBannerComponent, PlatsCarouselComponent, LandingFooterComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
