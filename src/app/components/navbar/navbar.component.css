@@ -234,10 +234,11 @@
         width: var(--input-seach-icon-width);
         aspect-ratio: 1 / 1;
         position: absolute;
-        top: 2px;
+        top: 1px;
         right: 2px;
         fill: #888;
         cursor: pointer;
+        color: #666;
       }
     }
   }
