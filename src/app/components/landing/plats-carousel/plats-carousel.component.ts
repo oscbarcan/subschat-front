@@ -72,19 +72,15 @@ export class PlatsCarouselComponent {
     },
   ]);
 
-  scrollLeft() {
+  protected scrollContainer(direction: 'left' | 'right') {
     const content = this.element.querySelector('.content');
     const card = this.element.querySelector('.card-container');
     const cardDimension = card?.getBoundingClientRect();
     const containerWidth = cardDimension?.width;
-    content!.scrollLeft -= containerWidth! + 20;
-  }
-
-  scrollRight() {
-    const content = this.element.querySelector('.content');
-    const card = this.element.querySelector('.card-container');
-    const cardDimension = card?.getBoundingClientRect();
-    const containerWidth = cardDimension?.width;
-    content!.scrollLeft += containerWidth! + 20;
+    if (direction == 'right') {
+      content!.scrollLeft += containerWidth! + 20;
+    } else {
+      content!.scrollLeft -= containerWidth! + 20;
+    }
   }
 }
