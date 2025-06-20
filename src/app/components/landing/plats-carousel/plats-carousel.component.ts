@@ -9,6 +9,8 @@ import { Component, ElementRef, inject, input, signal } from '@angular/core';
 export class PlatsCarouselComponent {
   public mode = input<'complex' | 'simple'>('complex');
   private element = inject(ElementRef).nativeElement as HTMLElement;
+  protected scrollLocked = signal<boolean>(false);
+
   cards = signal([
     {
       subscription: '1',
@@ -73,14 +75,18 @@ export class PlatsCarouselComponent {
   ]);
 
   protected scrollContainer(direction: 'left' | 'right') {
-    const content = this.element.querySelector('.content');
+    this.scrollLocked.set(true);
+    const content = this.element.querySelector('.content') as HTMLElement;
     const card = this.element.querySelector('.card-container');
     const cardDimension = card?.getBoundingClientRect();
     const containerWidth = cardDimension?.width;
     if (direction == 'right') {
-      content!.scrollLeft += containerWidth! + 20;
+      content!.scrollLeft += (containerWidth! + 20);
     } else {
-      content!.scrollLeft -= containerWidth! + 20;
+      content!.scrollLeft -= (containerWidth! + 20);
     }
+    setTimeout(() => {
+      this.scrollLocked.set(false);
+    }, 1000);
   }
 }
