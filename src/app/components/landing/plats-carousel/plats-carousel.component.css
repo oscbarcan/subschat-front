@@ -3,9 +3,8 @@
   --cards-gap: 20px;
   --cards-number: 5;
   --arrow-distance: calc((100% - ((var(--cards-number) * var(--card-width)) + ((var(--cards-number) - 1) * var(--cards-gap))) ) / 2 - 65px);
-  /*
-  FIXME: Try to do this on a dynamic way
-*/
+  
+  /* FIXME: Try to get cards number dynamically */
   @media (max-width: 1500px) {
     --cards-number: 4;
   }
@@ -14,11 +13,11 @@
     --cards-number: 3;
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 950px) {
     --cards-number: 2;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     --cards-number: 1;
   }
 }
@@ -46,10 +45,18 @@
   & .prev-button {
     left: var(--arrow-distance);
     transform: rotate(180deg);
+
+    &.disabled {
+      cursor: default;
+    }
   }
 
   & .next-button {
     right: var(--arrow-distance);
+
+    &.disabled {
+      cursor: default;
+    }
   }
 
   & .prev-button img,
@@ -128,7 +135,7 @@
 
             & .timestamp {
               font-size: 0.8rem;
-              color: #888;
+              color: #666;
             }
           }
 
@@ -145,7 +152,7 @@
             & .price {
               font-size: 1.2rem;
               font-weight: bold;
-              color: #e67e22;
+              color: #d66e12;
             }
           }
         }
