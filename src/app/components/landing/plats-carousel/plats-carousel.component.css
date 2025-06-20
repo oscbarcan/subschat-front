@@ -135,7 +135,7 @@
 
             & .timestamp {
               font-size: 0.8rem;
-              color: #888;
+              color: #666;
             }
           }
 
@@ -152,7 +152,7 @@
             & .price {
               font-size: 1.2rem;
               font-weight: bold;
-              color: #e67e22;
+              color: #d66e12;
             }
           }
         }
