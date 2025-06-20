@@ -1,8 +1,9 @@
+import { NgClass } from '@angular/common';
 import { Component, ElementRef, inject, input, signal } from '@angular/core';
 
 @Component({
   selector: 'plats-carousel',
-  imports: [],
+  imports: [NgClass], 
   templateUrl: './plats-carousel.component.html',
   styleUrl: './plats-carousel.component.css',
 })
