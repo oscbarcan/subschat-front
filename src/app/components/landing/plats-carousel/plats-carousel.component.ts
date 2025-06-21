@@ -9,7 +9,7 @@ import { Component, ElementRef, inject, input, OnInit, signal } from '@angular/c
 })
 export class PlatsCarouselComponent implements OnInit {
   public mode = input<'complex' | 'simple'>('complex');
-  public scrollBehaviour = input<'auto' | 'manual-only'>('auto');
+  public scrollBehaviour = input<'auto' | 'manual-only'>('manual-only');
 
 
   private element = inject(ElementRef).nativeElement as HTMLElement;
@@ -107,11 +107,11 @@ export class PlatsCarouselComponent implements OnInit {
       let msPerMove = 1000;
       let intervalCounter = 0;
       const showedCards = Number(getComputedStyle(this.element).getPropertyValue('--cards-number'));
-      const rightInterval = setInterval(() => {
+      const currentInterval = setInterval(() => {
         intervalCounter++;
         this.scrollContainer(direction);
         if (intervalCounter == this.cards().length - showedCards) {
-          clearInterval(rightInterval);
+          clearInterval(currentInterval);
           const nextDirection = direction == 'right' ? 'left' : 'right';
           this.startAutoScroll(nextDirection);
         }
