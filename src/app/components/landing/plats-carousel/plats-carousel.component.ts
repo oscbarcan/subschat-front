@@ -104,7 +104,7 @@ export class PlatsCarouselComponent implements OnInit {
   }
 
   private startAutoScroll(direction: 'right' | 'left' = 'right') {
-      let msPerMove = 1000;
+      let msPerMove = 2000;
       let intervalCounter = 0;
       const showedCards = Number(getComputedStyle(this.element).getPropertyValue('--cards-number'));
       const currentInterval = setInterval(() => {
@@ -125,9 +125,9 @@ export class PlatsCarouselComponent implements OnInit {
     const cardDimension = card?.getBoundingClientRect();
     const containerWidth = cardDimension?.width;
     if (direction == 'right') {
-      content!.scrollLeft += (containerWidth! + 20);
+      content.scrollLeft += (containerWidth! + 20);
     } else {
-      content!.scrollLeft -= (containerWidth! + 20);
+      content.scrollLeft -= (containerWidth! + 20);
     }
     setTimeout(() => {
       this.scrollLocked.set(false);
