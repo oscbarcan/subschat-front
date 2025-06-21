@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, ElementRef, inject, input, signal } from '@angular/core';
+import { Component, ElementRef, inject, input, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'plats-carousel',
@@ -7,11 +7,13 @@ import { Component, ElementRef, inject, input, signal } from '@angular/core';
   templateUrl: './plats-carousel.component.html',
   styleUrl: './plats-carousel.component.css',
 })
-export class PlatsCarouselComponent {
+export class PlatsCarouselComponent implements OnInit {
   public mode = input<'complex' | 'simple'>('complex');
+  public scrollBehaviour = input<'auto' | 'manual-only'>('auto');
+
+
   private element = inject(ElementRef).nativeElement as HTMLElement;
   protected scrollLocked = signal<boolean>(false);
-
   cards = signal([
     {
       subscription: '1',
@@ -94,6 +96,27 @@ export class PlatsCarouselComponent {
       timestamp: 2,
     },
   ]);
+
+  ngOnInit(): void {
+    if (this.scrollBehaviour() == 'auto') {
+      this.startAutoScroll();
+    }
+  }
+
+  private startAutoScroll(direction: 'right' | 'left' = 'right') {
+      let msPerMove = 1000;
+      let intervalCounter = 0;
+      const showedCards = Number(getComputedStyle(this.element).getPropertyValue('--cards-number'));
+      const rightInterval = setInterval(() => {
+        intervalCounter++;
+        this.scrollContainer(direction);
+        if (intervalCounter == this.cards().length - showedCards) {
+          clearInterval(rightInterval);
+          const nextDirection = direction == 'right' ? 'left' : 'right';
+          this.startAutoScroll(nextDirection);
+        }
+      }, msPerMove);
+  }
 
   protected scrollContainer(direction: 'left' | 'right') {
     this.scrollLocked.set(true);
