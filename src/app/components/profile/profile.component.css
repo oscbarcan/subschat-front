@@ -1,0 +1,158 @@
+.main-container {
+  background-color: #f5f5dc;
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr;
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 0;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    .profile-section {
+      grid-area: 1 / 1 / 4 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+      padding: 2rem;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+      .profile-picture-container {
+        .profile-picture {
+          border: 3px solid #8e8e8e;
+          border-radius: 50%;
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+      }
+
+      .user-info {
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          font-size: 1rem;
+          color: #333;
+          line-height: 1.8;
+
+          li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+
+    .recently-viewed-section {
+      grid-area: 1 / 3 / 4 / 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 2rem 3rem;
+
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #2c3e50;
+      }
+
+      .cards-container {
+        display: flex;
+        gap: 16px;
+
+        .card-container {
+          flex: 0 0 var(--card-width);
+          border: 1px solid #ccc;
+          border-radius: 12px;
+          overflow: hidden;
+          background-color: white;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: translateY(-5px);
+          }
+
+          .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .card-img {
+              height: 200px;
+              width: 200px;
+              overflow: hidden;
+              background-color: #eee;
+
+              .img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            .card-info {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              padding: 16px;
+              gap: 12px;
+
+              .top-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .service-name {
+                  font-size: 1.2rem;
+                  font-weight: bold;
+                  color: #333;
+                }
+
+                .timestamp {
+                  font-size: 0.8rem;
+                  color: #888;
+                }
+              }
+
+              .button-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .persons {
+                  font-size: 0.95rem;
+                  color: #555;
+                }
+
+                .price {
+                  font-size: 1.2rem;
+                  font-weight: bold;
+                  color: #e67e22;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .your-posts-section {
+      grid-area: 4 / 1 / 6 / 5;
+      padding: 2rem 3rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.15);
+    }
+  }
+}

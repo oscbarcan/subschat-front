@@ -1,11 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [NavbarComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
-
+  cards = signal([
+    {
+      subscription: '1',
+      persons: 4,
+      price: 25,
+      timestamp: 2,
+    },
+    {
+      subscription: '2',
+      persons: 4,
+      price: 25,
+      timestamp: 2,
+    },
+    {
+      subscription: '3',
+      persons: 4,
+      price: 25,
+      timestamp: 2,
+    },
+    {
+      subscription: '4',
+      persons: 4,
+      price: 25,
+      timestamp: 2,
+    }
+  ]);
 }

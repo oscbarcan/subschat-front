@@ -1,1 +1,45 @@
-<p>profile works!</p>
+<div class="main-container">
+  <navbar />
+  <main class="main">
+    <section class="profile-section">
+      <div class="profile-picture-container">
+        <img class="profile-picture" src="img/default-profile.jpg" alt="Profile">
+      </div>
+      <div class="user-info">
+        <ul>
+          <li>Username:{{'johndoe'}}</li>
+          <li>Emai:{{'johndoe@gmail.com'}}</li>
+          <li>Algo mas .txt</li>
+        </ul>
+      </div>
+    </section>
+    <section class="recently-viewed-section">
+      <span class="section-title">Recently Viewed</span>
+        <div class="cards-container">
+          @for (card of cards(); track $index) {
+          <div class="card-container">
+            <div class="card">
+              <div class="card-img">
+                <img class="img" src="/img/carousel/crunchyroll-carousel.jpg">
+              </div>
+
+              <div class="card-info">
+                <div class="top-section">
+                  <div class="service-name">{{card.subscription}}</div>
+                  <div class="timestamp">{{card.timestamp}} days ago</div>
+                </div>
+                <div class="button-section">
+                  <div class="persons">2/{{card.persons}}</div>
+                  <div class="price">€{{card.price}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+      </div>
+    </section>
+    <section class="your-posts-section">
+
+    </section>
+  </main>
+</div>
