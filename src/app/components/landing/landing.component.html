@@ -1,22 +1,36 @@
 <div class="root-container">
-  <header class="main-header"><navbar /></header>
+  <header class="main-header">
+    <navbar />
+  </header>
   <main class="main">
-    <!-- <landing-banner [bannerInput]="bannerChangeDealer()" /> -->
-    <!-- <plats-explorer (changeBanner)="receiveBannerNameChange($event)"></plats-explorer> -->
+    <landing-banner [bannerInput]="bannerChangeDealer()" />
+    <plats-explorer (changeBanner)="receiveBannerNameChange($event)"></plats-explorer>
     <div class="banner-carousel">
-      <plats-carousel></plats-carousel>
+      <carousel [cards]="cards()" [maxShowedCards]="5">
+          <ng-template let-cardInfo>
+            <custom-card [card]="cardInfo"></custom-card>
+          </ng-template>
+        </carousel>
     </div>
     <div class="best-offers-carousel">
       <div class="carousel-title-container">
         <span>Best Offers</span>
       </div>
-      <plats-carousel></plats-carousel>
+        <carousel [cards]="cards()" [maxShowedCards]="5">
+          <ng-template let-cardInfo>
+            <custom-card [card]="cardInfo"></custom-card>
+          </ng-template>
+        </carousel>
     </div>
     <div class="apps-carousel">
       <div class="carousel-title-container">
         <span>Direct Apps</span>
       </div>
-      <plats-carousel [mode]="'simple'"></plats-carousel>
+      <carousel [cards]="cards()" [maxShowedCards]="5">
+          <ng-template let-cardInfo>
+            <custom-card [mode]="'simple'" [card]="cardInfo"></custom-card>
+          </ng-template>
+        </carousel>
     </div>
   </main>
   <footer class="main-footer"><landing-footer /></footer>
