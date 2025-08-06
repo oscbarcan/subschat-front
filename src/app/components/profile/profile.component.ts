@@ -32,6 +32,18 @@ export class ProfileComponent {
       persons: 4,
       price: 25,
       timestamp: 2,
+    },
+    {
+      subscription: '5',
+      persons: 4,
+      price: 25,
+      timestamp: 2,
+    },
+    {
+      subscription: '6',
+      persons: 4,
+      price: 25,
+      timestamp: 2,
     }
   ]);
 
@@ -62,18 +74,6 @@ export class ProfileComponent {
     },
     {
       subscription: '5',
-      persons: 4,
-      price: 25,
-      timestamp: 2,
-    },
-    {
-      subscription: '6',
-      persons: 4,
-      price: 25,
-      timestamp: 2,
-    },
-    {
-      subscription: '7',
       persons: 4,
       price: 25,
       timestamp: 2,
