@@ -10,37 +10,49 @@ import { NavbarComponent } from "../navbar/navbar.component";
 export class ProfileComponent {
   cards = signal([
     {
-      subscription: '1',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
     },
     {
-      subscription: '2',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
     },
     {
-      subscription: '3',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
     },
     {
-      subscription: '4',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
     },
     {
-      subscription: '5',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
     },
     {
-      subscription: '6',
+      subscription: 'Crunchyroll Pack',
+      persons: 4,
+      price: 25,
+      timestamp: 2,
+    },
+    {
+      subscription: 'Crunchyroll Pack',
+      persons: 4,
+      price: 25,
+      timestamp: 2,
+    },
+    {
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
@@ -49,31 +61,31 @@ export class ProfileComponent {
 
   cards2 = signal([
     {
-      subscription: '1',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
     },
     {
-      subscription: '2',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
     },
     {
-      subscription: '3',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
     },
     {
-      subscription: '4',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
     },
     {
-      subscription: '5',
+      subscription: 'Crunchyroll Pack',
       persons: 4,
       price: 25,
       timestamp: 2,
