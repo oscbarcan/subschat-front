@@ -1,0 +1,87 @@
+.side-chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-right: gray 1px solid;
+  color: #ffffff;
+
+  & .options-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 10%;
+    /* This uses the 10% of the total amount of side-chat*/
+    & .search-bar {
+      min-height: 30px;
+      padding: 0.2rem;
+      padding-inline: 1rem;
+      border-radius: 15px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      width: 80%;
+      background-color: #fff;
+      transition: box-shadow 0.3s ease;
+    }
+  }
+  & .chats-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Custom Scrollbar */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #aaa;
+    }
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+
+    & :hover {
+      border-radius: 10px;
+      background-color: #2d2e2e;
+    }
+
+    .active {
+      border-radius: 10px;
+      background-color: #2d2e2e;
+    }
+
+    & .chat {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+      padding: 3px;
+      margin-inline: 10px;
+
+      & .profile-picture-container {
+        margin-left: 15px;
+
+        & .chat-image {
+          border: gray 0.5px solid;
+          border-radius: 20vh;
+          max-height: 55px;
+        }
+      }
+
+      & .main-chat-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 15px;
+        gap: 5px;
+      }
+    }
+  }
+}

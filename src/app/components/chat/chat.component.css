@@ -1,0 +1,21 @@
+:host {
+  --navbar-height: 4rem;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - var(--navbar-height));
+  width: 100%;
+
+  .side-chat {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: #221E1E;
+  }
+  .main-chat {
+    width: 70%;
+    background-color: lightblue;
+  }
+}
