@@ -1,5 +1,8 @@
 :host {
   --navbar-height: 4rem;
+  --white: #ffffff;
+  --main-gray: #a0a0a0;
+  --dark-gray: #2d2e2e;
 }
 
 .chat-container {
@@ -12,10 +15,10 @@
     width: 30%;
     display: flex;
     flex-direction: column;
-    background-color: #221E1E;
+    background-color: #221e1e;
   }
   .main-chat {
     width: 70%;
-    background-color: lightblue;
+    background-color: #252525;
   }
 }

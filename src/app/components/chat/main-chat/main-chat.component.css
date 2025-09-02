@@ -1,0 +1,43 @@
+.main-chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  & .profile-container {
+    flex: 0 0 7%;
+    display: flex;
+    flex-direction: row;
+
+    & .profile-picture-container {
+      margin-left: 15px;
+
+      & .chat-image {
+        border: var(--main-gray) 0.5px solid;
+        border-radius: 20vh;
+        max-height: 50px;
+      }
+    }
+    & .name-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 20px;
+
+      & .name {
+        font-weight: 600;
+        color: var(--white);
+      }
+    }
+  }
+
+  & .chat-container {
+    flex: 1;
+    overflow-y: auto;
+    background-color: antiquewhite;
+  }
+
+  & .keyboard-container {
+    flex: 0 0 10%;
+    background-color: brown;
+  }
+}
