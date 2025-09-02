@@ -1,16 +1,25 @@
+:host {
+  --white: #ffffff;
+  --main-gray: #a0a0a0;
+  --dark-gray: #2d2e2e;
+}
+
 .side-chat-container {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-right: gray 1px solid;
-  color: #ffffff;
+  border-right: var(--main-gray) 1px solid;
 
   & .options-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 10px;
+    gap: 10px;
     flex: 0 0 10%;
     /* This uses the 10% of the total amount of side-chat*/
+
     & .search-bar {
       min-height: 30px;
       padding: 0.2rem;
@@ -19,9 +28,37 @@
       border: none;
       outline: none;
       font-size: 16px;
-      width: 80%;
+      width: 85%;
+      margin-left: 5%;
       background-color: #fff;
       transition: box-shadow 0.3s ease;
+    }
+
+    .chat-filters {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      align-items: flex-start;
+      width: 90%;
+      margin-left: 5%;
+
+      .chat-button {
+        background-color: transparent;
+        border-radius: 10px;
+        color: var(--white);
+        border: 0.5px solid var(--main-gray);
+        padding: 3px 8px;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      :hover {
+        background-color: var(--dark-gray);
+      }
+
+      .active {
+        background-color: var(--main-gray);
+      }
     }
   }
   & .chats-container {
@@ -37,16 +74,16 @@
       background: transparent;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: #ccc;
+      background-color: var(--main-gray);
       border-radius: 10px;
     }
     &::-webkit-scrollbar-thumb:hover {
-      background-color: #aaa;
+      background-color: var(--dark-gray);
     }
 
     /* Firefox */
     scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
+    scrollbar-color: var(--main-gray) transparent;
 
     & :hover {
       border-radius: 10px;
@@ -55,7 +92,7 @@
 
     .active {
       border-radius: 10px;
-      background-color: #2d2e2e;
+      background-color: var(--dark-gray);
     }
 
     & .chat {
@@ -69,7 +106,7 @@
         margin-left: 15px;
 
         & .chat-image {
-          border: gray 0.5px solid;
+          border: var(--main-gray) 0.5px solid;
           border-radius: 20vh;
           max-height: 55px;
         }
@@ -83,14 +120,25 @@
         gap: 5px;
         width: 100%;
 
-        .name-time-container {
+        & .name-time-container {
           display: flex;
           justify-content: space-between;
           align-items: center;
           gap: 10px;
 
-          .timestamp {
+          & .name {
+            color: var(--white);
+          }
+
+          & .timestamp {
+            color: var(--main-gray);
             font-size: small;
+          }
+        }
+
+        .lastmsg-container {
+          .lastmsg {
+            color: var(--main-gray);
           }
         }
       }
