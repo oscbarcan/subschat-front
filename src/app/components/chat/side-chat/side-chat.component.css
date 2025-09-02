@@ -62,7 +62,7 @@
       display: flex;
       flex-direction: row;
       margin-bottom: 10px;
-      padding: 3px;
+      padding: 5px;
       margin-inline: 10px;
 
       & .profile-picture-container {
@@ -81,6 +81,18 @@
         flex-direction: column;
         margin-left: 15px;
         gap: 5px;
+        width: 100%;
+
+        .name-time-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+
+          .timestamp {
+            font-size: small;
+          }
+        }
       }
     }
   }

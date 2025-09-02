@@ -1,6 +1,6 @@
 <div class="side-chat-container">
   <div class="options-container">
-      <input class="search-bar" type="text" placeholder="Search a chat">
+    <input class="search-bar" type="text" placeholder="Search a chat">
   </div>
   <div class="chats-container">
     @for (chat of chats(); track $index) {
@@ -9,8 +9,13 @@
         <img class="chat-image" src={{chat.img}}>
       </div>
       <div class="main-chat-container">
-        <span>{{chat.name}}</span>
-        <span>{{chat.lastmsg}}</span>
+        <div class="name-time-container">
+          <span>{{chat.name}}</span>
+          <span class="timestamp">{{chat.time_stamp}}</span>
+        </div>
+        <div>
+          <span>{{chat.lastmsg}}</span>
+        </div>
       </div>
     </div>
     }
