@@ -30,14 +30,114 @@
     }
   }
 
+  /* Chat Container */
+
   & .chat-container {
     flex: 1;
     overflow-y: auto;
-    background-color: antiquewhite;
+    overflow-x: hidden;
+    background-color: #e6dcdc;
+
+    /* Custom Scrollbar */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--main-gray);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--dark-gray);
+    }
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--main-gray) transparent;
+
+    & .chat-main {
+      box-sizing: border-box;
+      padding-inline: 30px;
+      padding-top: 30px;
+
+      & .message-container {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+      }
+      & .received {
+        justify-content: flex-start;
+
+        & .message-layout {
+          flex-direction: row;
+
+          & .message {
+            background-color: rgb(189, 189, 189);
+            border-top-right-radius: 5px;
+          }
+
+          & .arrow {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-top: 10px solid rgb(189, 189, 189);
+          }
+        }
+      }
+
+      & .sent {
+        justify-content: flex-end;
+
+        & .message-image-container {
+          display: none;
+        }
+
+        & .message-layout {
+          flex-direction: row-reverse;
+
+          & .message {
+            background-color: rgb(127, 219, 127);
+            border-top-left-radius: 5px;
+
+            & .message-user {
+              display: none;
+            }
+          }
+
+          & .arrow {
+            width: 0;
+            height: 0;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid rgb(127, 219, 127);
+          }
+        }
+      }
+
+      .message-layout {
+        display: flex;
+        align-items: flex-start;
+
+        .message {
+          padding: 7px 10px;
+          max-width: 800px;
+          border-end-end-radius: 5px;
+          border-end-start-radius: 5px;
+        }
+      }
+
+      & .message-image-container {
+        & .message-image {
+          height: 30px;
+          border-radius: 40px;
+        }
+      }
+    }
   }
 
   & .keyboard-container {
-    flex: 0 0 10%;
-    background-color: brown;
+    flex: 0 0 8%;
+    background-color: #e6dcdc;
   }
 }
