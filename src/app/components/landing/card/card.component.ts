@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'custom-card',
@@ -9,5 +9,22 @@ import { Component, input } from '@angular/core';
 export class CardComponent {
   public card = input<any>();
   public mode = input<'complex' | 'simple'>('complex');
-
+  members = signal([
+    {
+      name: 'David',
+      rol: 'admin',
+    },
+    {
+      name: 'Pepe',
+      rol: 'member',
+    },
+    {
+      name: 'Antonio',
+      rol: 'member',
+    },
+    {
+      name: 'Felipe',
+      rol: 'member',
+    }
+  ]);
 }

@@ -1,17 +1,47 @@
 <div class="card">
-    <div class="card-img">
-        <img class="img" [src]="card()?.imageSrc" [alt]="card()?.imageAlt">
+  <div class="card-img">
+    <img class="img" [src]="card()?.imageSrc" [alt]="card()?.imageAlt">
+  </div>
+  @if (mode() == 'complex') {
+  <div class="card-info">
+    <div class="top-section">
+      <div class="service-name">{{card()?.subscription}}</div>
+      <div class="timestamp">{{card()?.timestamp}} days ago</div>
     </div>
-    @if (mode() == 'complex') {
-        <div class="card-info">
-            <div class="top-section">
-                <div class="service-name">{{card()?.subscription}}</div>
-                <div class="timestamp">{{card()?.timestamp}} days ago</div>
-            </div>
-            <div class="button-section">
-                <div class="persons">2/{{card()?.persons}}</div>
-                <div class="price">€{{card()?.price}}</div>
-            </div>
+    <div class="button-section">
+      <div class="persons">2/{{card()?.persons}}</div>
+      <div class="price">€{{card()?.price}}</div>
+    </div>
+  </div>
+  }
+</div>
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-banner">
+      <img class="img" src="/img/banners/crunchy-banner.jpg">
+    </div>
+    <div class="modal-main">
+      <div class="left-main">
+        <div>Crunchyroll Mega Fan</div>
+      </div>
+      <div class="left-main">
+        <div class="member-container">
+          <div class="member-count">Members: 4/5</div>
+          <div class="member-list">
+            @for (member of members(); track $index) {
+            <p>{{member.name}}</p>
+            }
+          </div>
         </div>
-    }
+        <div class="price-container">
+          <div class="old-price">Before: 25€</div>
+          <div class="new-price">After: 5€/Person</div>
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="join modal-button">Join</button>
+      <button class="dismiss modal-button">Dismiss</button>
+    </div>
+  </div>
 </div>
