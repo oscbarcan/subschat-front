@@ -1,5 +1,5 @@
-<div class="modal-overlay" [ngClass]="{'active': showModal()}">
-    <div class="modal-container">
+<div class="modal-overlay" [ngClass]="{'active': showModal()}" #blurContainer>
+    <div class="modal-container" (clickOutside)="manageClickOutside($event)">
         <div class="modal-banner">
             <img class="img" src="/img/banners/crunchy-banner.jpg">
         </div>

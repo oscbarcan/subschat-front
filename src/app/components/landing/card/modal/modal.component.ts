@@ -1,9 +1,10 @@
 import { NgClass } from '@angular/common';
-import { Component, input, output, signal } from '@angular/core';
+import { Component, ElementRef, input, output, signal, viewChild } from '@angular/core';
+import { ClickOutsideDirective } from '../../../../directives/click-outside.directive';
 
 @Component({
   selector: 'card-modal',
-  imports: [NgClass],
+  imports: [NgClass, ClickOutsideDirective],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
 })
@@ -12,11 +13,17 @@ export class ModalComponent {
   public showModal = input<boolean>();
 
   protected hideModal = output();
+  protected blurContainer = viewChild<ElementRef>('blurContainer')
 
   disableModal() {
     this.hideModal.emit();
   }
 
+  manageClickOutside(target: HTMLElement) {
+    if (target == this.blurContainer()?.nativeElement) {
+      this.disableModal();
+    }
+  }
 
   members = signal([
     {
