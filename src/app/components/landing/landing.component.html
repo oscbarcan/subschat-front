@@ -36,4 +36,4 @@
   <footer class="main-footer"><landing-footer /></footer>
 </div>
 
-<card-modal [cardInfo]="modalInfo()" [showModal]="showModal()" />
+<card-modal [cardInfo]="modalInfo()" [showModal]="showModal()" (hideModal)="hideModal()"/>

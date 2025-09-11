@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 
 @Component({
   selector: 'card-modal',
@@ -10,6 +10,13 @@ import { Component, input, signal } from '@angular/core';
 export class ModalComponent {
   public cardInfo = input<any>();
   public showModal = input<boolean>();
+
+  protected hideModal = output();
+
+  disableModal() {
+    this.hideModal.emit();
+  }
+
 
   members = signal([
     {

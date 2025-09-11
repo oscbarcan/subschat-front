@@ -26,7 +26,6 @@ import { ClickOutsideDirective } from "../../directives/click-outside.directive"
 export class LandingComponent {
   protected bannerChangeDealer = signal<PlatformName>('Crunchyroll');
 
-
   protected modalInfo = signal<any>({});
   protected showModal = signal<boolean>(false);
 
@@ -121,5 +120,9 @@ export class LandingComponent {
   protected updateModalInfo(cardInfo: any) {
     this.showModal.set(true);
     this.modalInfo.set(cardInfo);
+  }
+
+  protected hideModal(){
+    this.showModal.set(false);
   }
 }
