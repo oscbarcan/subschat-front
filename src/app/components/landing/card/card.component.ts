@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 
 @Component({
   selector: 'custom-card',
@@ -9,6 +9,15 @@ import { Component, input, signal } from '@angular/core';
 export class CardComponent {
   public card = input<any>();
   public mode = input<'complex' | 'simple'>('complex');
+
+  public showModal = output<any>();
+
+
+  protected enableModal() {
+    this.showModal.emit(this.card());
+  }
+
+
   members = signal([
     {
       name: 'David',
