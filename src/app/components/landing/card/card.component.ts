@@ -10,14 +10,6 @@ export class CardComponent {
   public card = input<any>();
   public mode = input<'complex' | 'simple'>('complex');
 
-  public showModal = output<any>();
-
-
-  protected enableModal() {
-    this.showModal.emit(this.card());
-  }
-
-
   members = signal([
     {
       name: 'David',

@@ -7,6 +7,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { CarouselComponent } from '@triwebdev/carousel';
 import { CardComponent } from './card/card.component';
 import { ModalComponent } from './card/modal/modal.component';
+import { ClickOutsideDirective } from "../../directives/click-outside.directive";
 
 @Component({
   selector: 'app-landing',
@@ -17,15 +18,15 @@ import { ModalComponent } from './card/modal/modal.component';
     LandingFooterComponent,
     CarouselComponent,
     CardComponent,
-    ModalComponent
-  ],
+    ModalComponent,
+],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
 export class LandingComponent {
   protected bannerChangeDealer = signal<PlatformName>('Crunchyroll');
 
-  
+
   protected modalInfo = signal<any>({});
   protected showModal = signal<boolean>(false);
 
@@ -120,5 +121,5 @@ export class LandingComponent {
   protected updateModalInfo(cardInfo: any) {
     this.showModal.set(true);
     this.modalInfo.set(cardInfo);
-  } 
+  }
 }
