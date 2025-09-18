@@ -1,0 +1,32 @@
+<div class="main-chat">
+  <header class="profile-container">
+    <div class="profile-picture-container">
+      <img class="chat-image" src="img/default-profile.jpg">
+    </div>
+    <div class="name-container">
+      <span class="name">David Daw</span>
+    </div>
+  </header>
+  <main class="chat-container">
+    <div class="chat-main">
+      @for (message of messages(); track $index) {
+      <div class="message-container" [ngClass]="{'sent': (message.user == 'Oscar'), 'received': (message.user != 'Oscar')}" >
+        <div class="message-image-container">
+          <img class="message-image" src="img/default-profile.jpg" alt="">
+        </div>
+        <div class="message-layout">
+          <div class="arrow"></div>
+          <div class="message">
+            <div class="message-user">{{message.user}}</div>
+            <div class="message-content">{{message.content}}</div>
+          </div>
+        </div>
+      </div>
+      }
+
+    </div>
+  </main>
+  <footer class="keyboard-container">
+    <input class="search-bar" type="text" placeholder="Write a message">
+  </footer>
+</div>
