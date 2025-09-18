@@ -5,13 +5,13 @@ import { Directive, ElementRef, HostListener, inject, output } from '@angular/co
 })
 export class ClickOutsideDirective {
   private el = inject(ElementRef);
-  public clickOutside = output();
+  public clickOutside = output<HTMLElement>();
 
-  @HostListener('document:click', ['$event.target']) 
+  @HostListener('document:click', ['$event.target'])
   public onClick(target: HTMLElement) {
     const clickedInside = this.el.nativeElement.contains(target);
     if (!clickedInside) {
-      this.clickOutside.emit();
+      this.clickOutside.emit(target);
     }
   }
 }

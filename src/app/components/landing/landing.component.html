@@ -8,7 +8,7 @@
     <div class="banner-carousel">
       <carousel [cards]="cards()" [maxShowedCards]="5">
           <ng-template let-cardInfo>
-            <custom-card [card]="cardInfo"></custom-card>
+            <custom-card (click)="updateModalInfo(cardInfo)" [card]="cardInfo"></custom-card>
           </ng-template>
         </carousel>
     </div>
@@ -18,7 +18,7 @@
       </div>
         <carousel [cards]="cards()" [maxShowedCards]="5">
           <ng-template let-cardInfo>
-            <custom-card [card]="cardInfo"></custom-card>
+            <custom-card (click)="updateModalInfo(cardInfo)" [card]="cardInfo"></custom-card>
           </ng-template>
         </carousel>
     </div>
@@ -35,3 +35,5 @@
   </main>
   <footer class="main-footer"><landing-footer /></footer>
 </div>
+
+<card-modal [cardInfo]="modalInfo()" [showModal]="showModal()" (hideModal)="hideModal()"/>

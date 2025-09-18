@@ -1,0 +1,30 @@
+<div class="modal-overlay" [ngClass]="{'active': showModal()}" #blurContainer>
+    <div class="modal-container" (clickOutside)="manageClickOutside($event)">
+        <div class="modal-banner">
+            <img class="img" src="/img/banners/crunchy-banner.jpg">
+        </div>
+        <div class="modal-main">
+            <div class="left-main">
+                <div>Crunchyroll Mega Fan</div>
+            </div>
+            <div class="left-main">
+                <div class="member-container">
+                    <div class="member-count">Members: 4/5</div>
+                    <div class="member-list">
+                        @for (member of members(); track $index) {
+                        <p>{{member.name}}</p>
+                        }
+                    </div>
+                </div>
+                <div class="price-container">
+                    <div class="old-price">Before: 25€</div>
+                    <div class="new-price">After: 5€/Person</div>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+          <button class="dismiss modal-button" (click)="disableModal()">Dismiss</button>
+            <button class="join modal-button">Join</button>
+        </div>
+    </div>
+</div>
