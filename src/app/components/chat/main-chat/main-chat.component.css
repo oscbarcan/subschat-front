@@ -101,7 +101,7 @@
           flex-direction: row-reverse;
 
           & .message {
-            background-color: var(--green-message);
+            background-color: var(--orange-message);
             border-top-left-radius: 5px;
 
             & .message-user {
@@ -113,7 +113,7 @@
             width: 0;
             height: 0;
             border-bottom: 10px solid transparent;
-            border-left: 10px solid var(--green-message);
+            border-left: 10px solid var(--orange-message);
           }
         }
       }
