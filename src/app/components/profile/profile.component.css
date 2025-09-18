@@ -2,7 +2,6 @@
   background-color: #f5f5dc;
   display: grid;
   max-height: 100dvh;
-  font-family: "Lato", sans-serif;
 
   & .main {
     min-height: 100dhv;

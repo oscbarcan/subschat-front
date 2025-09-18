@@ -1,0 +1,28 @@
+:host {
+  --navbar-height: 4rem;
+  --white: #ffffff;
+  --main-gray: #a0a0a0;
+  --dark-gray: #2d2e2e;
+  --green-message: #7FDB7F;
+  --orange-message: #fd9c53;
+  --gray-message: #BDBDBD;
+  --main-background: #e6dcdc;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - var(--navbar-height));
+  width: 100%;
+
+  .side-chat {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: #221e1e;
+  }
+  .main-chat {
+    width: 70%;
+    background-color: #221e1e;
+  }
+}

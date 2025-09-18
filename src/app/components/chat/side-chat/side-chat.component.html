@@ -1,0 +1,28 @@
+<div class="side-chat-container">
+  <div class="options-container">
+    <input class="search-bar" type="text" placeholder="Search a chat">
+    <div class="chat-filters">
+      <button class="chat-button">All</button>
+      <button class="chat-button">Favorites</button>
+      <button class="chat-button">Unreaded</button>
+    </div>
+  </div>
+  <div class="chats-container">
+    @for (chat of chats(); track $index) {
+    <div class="chat">
+      <div class="profile-picture-container">
+        <img class="chat-image" src={{chat.img}}>
+      </div>
+      <div class="main-chat-container">
+        <div class="name-time-container">
+          <span class="name">{{chat.name}}</span>
+          <span class="timestamp">{{chat.time_stamp}}</span>
+        </div>
+        <div class="lastmsg-container">
+          <span class="lastmsg">{{chat.lastmsg}}</span>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
